@@ -1,3 +1,5 @@
+var svg, path;
+
 function preload() {
     const buildCost = loadJSON("./models/data/buildCost.json")
     const quality = loadJSON("./models/data/quality.json")
@@ -5,12 +7,29 @@ function preload() {
     const energyProduction = loadJSON("./models/data/energyProduction.json")
     const modifiers = loadJSON("./models/data/modifiers.json")
     const pollution = loadJSON("./models/data/quality.json")
+
+    svg = loadSVG('images/mapOfEurope.svg');
+    frameRate(20);
+
 }
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(600, 500, SVG);
+    image(svg, 0, 0, 600, 500);
+    
+    path = querySVG('path');
+    for (let i = 0; i < path.length; i++) {
+        if (path[i].id() !== "") {
+            path[i].attribute('onclick', 'countryOnClick( path[' + i + '])');
+        }
+    }
 }
   
 function draw() {
-    background(220);
+
+}
+
+function countryOnClick(pathOfCountry) {
+    pathOfCountry.attribute('fill', 'red');
+    console.log(pathOfCountry.id());
 }
