@@ -1,5 +1,5 @@
 html, body {
-    margin: 0;
+    margin: 10px;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
@@ -12,12 +12,12 @@ html, body {
 
 .controlPanel {
     float: left;
-    width: 25%;
+    width: 20%;
 }
 
 .mapPanel {
     float: left;
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
 
@@ -40,8 +40,8 @@ html, body {
 
 .controlHeader {
     background-color: navy;
-    float: left;
-    width: 100%;
+    /*float: left;*/
+    /*width: 100%;*/
     color: #ffffff;
     font-weight: bold;
     font-size: 1.2em;
@@ -51,12 +51,15 @@ html, body {
 }
 
 .controlLabel {
-    float: left;
-    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*float: left;*/
+    /*width: 40%;*/
 }
 
 .controlValue {
-    float: left;
-    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*float: left;*/
     font-weight: bold;
 }
