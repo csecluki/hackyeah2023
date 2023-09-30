@@ -21,6 +21,10 @@ class Country {
         return this.getDemandSatisfaction() > 1
     }
 
+    getTotalCost() {
+        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.buildingCost, 0)
+    }
+
     getNumberOfPowerStationsByType(stationType) {
         return this.powerStations.filter(obj => obj instanceof stationType).length
     }

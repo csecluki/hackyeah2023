@@ -3,9 +3,10 @@ class PowerStation {
     static basePowerProduction
     static pollution
 
-    constructor(basePowerProduction, powerProductionModifier, pollution) {
+    constructor(basePowerProduction, powerProductionModifier, pollution, buildingCost) {
         this.powerProduction = this.calculatePowerProduction(basePowerProduction, powerProductionModifier)
         this.pollution = pollution
+        this.buildingCost = buildingCost
     }
 
     calculatePowerProduction(basePowerProduction, powerProductionModifier) {
@@ -20,7 +21,12 @@ class AtomicPowerStation extends PowerStation {
     static pollution = 8
     
     constructor(powerProductionModifier) {
-        super(AtomicPowerStation.basePowerProduction, powerProductionModifier, AtomicPowerStation.pollution)
+        super(
+            AtomicPowerStation.basePowerProduction,
+            powerProductionModifier,
+            AtomicPowerStation.pollution,
+            AtomicPowerStation.baseBuildingCost
+        )
     }
 
 }
@@ -31,7 +37,12 @@ class WindPowerStation extends PowerStation {
     static pollution = 2.5
     
     constructor(powerProductionModifier) {
-        super(WindPowerStation.basePowerProduction, powerProductionModifier, WindPowerStation.pollution)
+        super(
+            WindPowerStation.basePowerProduction,
+            powerProductionModifier,
+            WindPowerStation.pollution,
+            WindPowerStation.baseBuildingCost
+        )
     }
 
 }
@@ -42,7 +53,12 @@ class WaterPowerStation extends PowerStation {
     static pollution = 6
     
     constructor(powerProductionModifier) {
-        super(WaterPowerStation.basePowerProduction, powerProductionModifier, WaterPowerStation.pollution)
+        super(
+            WaterPowerStation.basePowerProduction,
+            powerProductionModifier,
+            WaterPowerStation.pollution,
+            WaterPowerStation.baseBuildingCost
+        )
     }
 
 }
@@ -53,7 +69,12 @@ class CoalPowerStation extends PowerStation {
     static pollution = 25
     
     constructor(powerProductionModifier) {
-        super(CoalPowerStation.basePowerProduction, powerProductionModifier, CoalPowerStation.pollution)
+        super(
+            CoalPowerStation.basePowerProduction,
+            powerProductionModifier,
+            CoalPowerStation.pollution,
+            CoalPowerStation.baseBuildingCost
+        )
     }
 
 }
@@ -64,7 +85,12 @@ class SolarPowerStation extends PowerStation {
     static pollution = 1
     
     constructor(powerProductionModifier) {
-        super(SolarPowerStation.basePowerProduction, powerProductionModifier, SolarPowerStation.pollution)
+        super(
+            SolarPowerStation.basePowerProduction,
+            powerProductionModifier,
+            SolarPowerStation.pollution,
+            SolarPowerStation.baseBuildingCost
+        )
     }
 
 }
