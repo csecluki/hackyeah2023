@@ -21,9 +21,14 @@ class Country {
         return this.getDemandSatisfaction() > 1
     }
 
-    buildPowerStation(station, qualityFactor) {
-        const count = this.powerStations.filter(obj => obj instanceof station).length;
-        station = new station(count * qualityFactor, station.pollution)
+    getNumberOfPowerStationsByType(stationType) {
+        return this.powerStations.filter(obj => obj instanceof stationType).length
+    }
+
+    buildPowerStation(stationType, qualityFactor) {
+        const count = this.getNumberOfPowerStationsByType(stationType)
+        console.log(count)
+        let station = new stationType(count * qualityFactor)
         this.powerStations.push(station)
         return this.powerStations
     }
@@ -32,12 +37,12 @@ class Country {
         let lastIndex = -1;
         for (let i = this.powerStations.length - 1; i >= 0; i--) {
             if (this.powerStations[i] instanceof stationType) {
-                lastIndex = i;
-                break;
+                lastIndex = i
+                break
             }
         }
         if (lastIndex !== -1) {
-            this.powerStations.splice(lastIndex, 1);
+            this.powerStations.splice(lastIndex, 1)
         }
         return this.powerStations
     }
