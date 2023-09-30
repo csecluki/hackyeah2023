@@ -1,0 +1,9 @@
+{
+    "pollution": {
+        "AtomicPowerStation": 8,
+        "WindPowerStation": 2.5,
+        "WaterPowerStation": 6,
+        "CoalPowerStation": 25,
+        "SolarPowerStation": 1
+    }
+}
