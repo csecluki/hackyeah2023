@@ -1,5 +1,7 @@
 class Country {
-    constructor(powerStations) {
+    constructor(name, demand, powerStations) {
+        this.name = name
+        this.demand = demand
         this.powerStations = powerStations
     }
 
