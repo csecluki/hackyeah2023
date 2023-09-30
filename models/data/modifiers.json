@@ -104,13 +104,6 @@
         "CoalPowerStation": -0.2,
         "SolarPowerStation": 0.1
     },
-    "Georgia": {
-        "AtomicPowerStation": 0.1,
-        "WindPowerStation": 0.0,
-        "WaterPowerStation": 0.3,
-        "CoalPowerStation": 0.05,
-        "SolarPowerStation": 0.0
-    },
     "Germany": {
         "AtomicPowerStation": -0.3,
         "WindPowerStation": 0.4,
@@ -152,13 +145,6 @@
         "WaterPowerStation": 0.2,
         "CoalPowerStation": -0.2,
         "SolarPowerStation": 0.3
-    },
-    "Kazakhstan": {
-        "AtomicPowerStation": 0.2,
-        "WindPowerStation": 0.05,
-        "WaterPowerStation": 0.3,
-        "CoalPowerStation": 0.1,
-        "SolarPowerStation": -0.05
     },
     "Latvia": {
         "AtomicPowerStation": 0.05,
