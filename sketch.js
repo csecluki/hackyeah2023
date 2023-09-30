@@ -2,7 +2,7 @@ var svg, path, canvas;
 
 var divMainCointainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
 var divCountryStats, divCuntryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
-var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
+var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost, divCountryStats_europeRemainingFunds;
 var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost;
 let countries = [];
 let europe;
@@ -67,6 +67,10 @@ function setup() {
     divEuropeStats.child(createDiv('Overall Cost:').class('controlLabel'));
     divCountryStats_europeOverallCost = createDiv(europe.getTotalCost()).class('controlValue');
     divEuropeStats.child(divCountryStats_europeOverallCost);
+
+    divEuropeStats.child(createDiv('Remaining Funds:').class('controlLabel'));
+    divCountryStats_europeRemainingFunds = createDiv(europe.funds).class('controlValue');
+    divEuropeStats.child(divCountryStats_europeRemainingFunds);
 
 
     // ======================================================
