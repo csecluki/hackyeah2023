@@ -2,11 +2,11 @@
     {
         "name": "Albania",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.4,
-            "CoalPowerStation": -0.3,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.4,
+            "coalPowerStation": -0.3,
+            "solarPowerStation": 0.1
         },
         "demand": 10,
         "powerStations": []
@@ -14,11 +14,11 @@
     {
         "name": "Armenia",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.25,
-            "CoalPowerStation": -0.05,
-            "SolarPowerStation": 0.2
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.25,
+            "coalPowerStation": -0.05,
+            "solarPowerStation": 0.2
         },
         "demand": 8,
         "powerStations": []
@@ -26,11 +26,11 @@
     {
         "name": "Austria",
         "effectiveness": {
-            "AtomicPowerStation": -0.2,
-            "WindPowerStation": 0.3,
-            "WaterPowerStation": 0.4,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.25
+            "atomicPowerStation": -0.2,
+            "windPowerStation": 0.3,
+            "waterPowerStation": 0.4,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.25
         },
         "demand": 65,
         "powerStations": []
@@ -38,11 +38,11 @@
     {
         "name": "Azerbaijan",
         "effectiveness": {
-            "AtomicPowerStation": 0.15,
-            "WindPowerStation": 0.0,
-            "WaterPowerStation": 0.35,
-            "CoalPowerStation": -0.05,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": 0.15,
+            "windPowerStation": 0.0,
+            "waterPowerStation": 0.35,
+            "coalPowerStation": -0.05,
+            "solarPowerStation": 0.1
         },
         "demand": 35,
         "powerStations": []
@@ -50,11 +50,11 @@
     {
         "name": "Belarus",
         "effectiveness": {
-            "AtomicPowerStation": 0.4,
-            "WindPowerStation": -0.1,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.1,
-            "SolarPowerStation": -0.2
+            "atomicPowerStation": 0.4,
+            "windPowerStation": -0.1,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.1,
+            "solarPowerStation": -0.2
         },
         "demand": 40,
         "powerStations": []
@@ -62,11 +62,11 @@
     {
         "name": "Belgium",
         "effectiveness": {
-            "AtomicPowerStation": -0.2,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.15,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": -0.2,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.15,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.1
         },
         "demand": 85,
         "powerStations": []
@@ -74,11 +74,11 @@
     {
         "name": "Bosnia and Herzegovina",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": -0.05,
-            "WaterPowerStation": 0.4,
-            "CoalPowerStation": 0.2,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.1,
+            "windPowerStation": -0.05,
+            "waterPowerStation": 0.4,
+            "coalPowerStation": 0.2,
+            "solarPowerStation": -0.1
         },
         "demand": 15,
         "powerStations": []
@@ -86,11 +86,11 @@
     {
         "name": "Bulgaria",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.15,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.1,
-            "SolarPowerStation": -0.05
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.15,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.1,
+            "solarPowerStation": -0.05
         },
         "demand": 32,
         "powerStations": []
@@ -98,11 +98,11 @@
     {
         "name": "Croatia",
         "effectiveness": {
-            "AtomicPowerStation": -0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.25,
-            "CoalPowerStation": 0.05,
-            "SolarPowerStation": 0.15
+            "atomicPowerStation": -0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.25,
+            "coalPowerStation": 0.05,
+            "solarPowerStation": 0.15
         },
         "demand": 18,
         "powerStations": []
@@ -110,11 +110,11 @@
     {
         "name": "Cyprus",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": -0.1,
-            "CoalPowerStation": 0.0,
-            "SolarPowerStation": 0.3
+            "atomicPowerStation": 0.1,
+            "windPowerStation": 0.1,
+            "waterPowerStation": -0.1,
+            "coalPowerStation": 0.0,
+            "solarPowerStation": 0.3
         },
         "demand": 7,
         "powerStations": []
@@ -122,11 +122,11 @@
     {
         "name": "Czech Republic",
         "effectiveness": {
-            "AtomicPowerStation": 0.15,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.2,
-            "SolarPowerStation": 0.05
+            "atomicPowerStation": 0.15,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.2,
+            "solarPowerStation": 0.05
         },
         "demand": 70,
         "powerStations": []
@@ -134,11 +134,11 @@
     {
         "name": "Denmark",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.5,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.3,
-            "SolarPowerStation": 0.2
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.5,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.3,
+            "solarPowerStation": 0.2
         },
         "demand": 30,
         "powerStations": []
@@ -146,11 +146,11 @@
     {
         "name": "Estonia",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.15,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.2
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.15,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.2
         },
         "demand": 8,
         "powerStations": []
@@ -158,11 +158,11 @@
     {
         "name": "Finland",
         "effectiveness": {
-            "AtomicPowerStation": 0.0,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.2
+            "atomicPowerStation": 0.0,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.2
         },
         "demand": 55,
         "powerStations": []
@@ -170,11 +170,11 @@
     {
         "name": "France",
         "effectiveness": {
-            "AtomicPowerStation": 0.3,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.2,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": 0.3,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.2,
+            "solarPowerStation": 0.1
         },
         "demand": 480,
         "powerStations": []
@@ -182,11 +182,11 @@
     {
         "name": "Germany",
         "effectiveness": {
-            "AtomicPowerStation": -0.3,
-            "WindPowerStation": 0.4,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.2,
-            "SolarPowerStation": 0.3
+            "atomicPowerStation": -0.3,
+            "windPowerStation": 0.4,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.2,
+            "solarPowerStation": 0.3
         },
         "demand": 600,
         "powerStations": []
@@ -194,11 +194,11 @@
     {
         "name": "Greece",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.05,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.05,
+            "solarPowerStation": 0.1
         },
         "demand": 50,
         "powerStations": []
@@ -206,11 +206,11 @@
     {
         "name": "Hungary",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": 0.05,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.1,
-            "SolarPowerStation": -0.05
+            "atomicPowerStation": 0.1,
+            "windPowerStation": 0.05,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.1,
+            "solarPowerStation": -0.05
         },
         "demand": 45,
         "powerStations": []
@@ -218,11 +218,11 @@
     {
         "name": "Iceland",
         "effectiveness": {
-            "AtomicPowerStation": -0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.6,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.05
+            "atomicPowerStation": -0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.6,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.05
         },
         "demand": 5,
         "powerStations": []
@@ -230,11 +230,11 @@
     {
         "name": "Ireland",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.4,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.2,
-            "SolarPowerStation": 0.2
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.4,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.2,
+            "solarPowerStation": 0.2
         },
         "demand": 28,
         "powerStations": []
@@ -242,11 +242,11 @@
     {
         "name": "Italy",
         "effectiveness": {
-            "AtomicPowerStation": 0.0,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": -0.2,
-            "SolarPowerStation": 0.3
+            "atomicPowerStation": 0.0,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": -0.2,
+            "solarPowerStation": 0.3
         },
         "demand": 310,
         "powerStations": []
@@ -254,11 +254,11 @@
     {
         "name": "Latvia",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.15
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.15
         },
         "demand": 7,
         "powerStations": []
@@ -266,11 +266,11 @@
     {
         "name": "Lithuania",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.1,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.1
         },
         "demand": 12,
         "powerStations": []
@@ -278,11 +278,11 @@
     {
         "name": "Luxembourg",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.05,
-            "SolarPowerStation": 0.05
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.05,
+            "solarPowerStation": 0.05
         },
         "demand": 6,
         "powerStations": []
@@ -290,11 +290,11 @@
     {
         "name": "North Macedonia",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.25,
-            "CoalPowerStation": 0.1,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.25,
+            "coalPowerStation": 0.1,
+            "solarPowerStation": -0.1
         },
         "demand": 9,
         "powerStations": []
@@ -302,11 +302,11 @@
     {
         "name": "Moldova",
         "effectiveness": {
-            "AtomicPowerStation": 0.0,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.05
+            "atomicPowerStation": 0.0,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.05
         },
         "demand": 10,
         "powerStations": []
@@ -314,11 +314,11 @@
     {
         "name": "Montenegro",
         "effectiveness": {
-            "AtomicPowerStation": 0.0,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.0,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.1
         },
         "demand": 5,
         "powerStations": []
@@ -326,11 +326,11 @@
     {
         "name": "Netherlands",
         "effectiveness": {
-            "AtomicPowerStation": -0.2,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": -0.2,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.1
         },
         "demand": 110,
         "powerStations": []
@@ -338,11 +338,11 @@
     {
         "name": "Norway",
         "effectiveness": {
-            "AtomicPowerStation": 0.0,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.4,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": 0.0,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.4,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.1
         },
         "demand": 50,
         "powerStations": []
@@ -350,11 +350,11 @@
     {
         "name": "Poland",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": 0.15,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.2,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.1,
+            "windPowerStation": 0.15,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.2,
+            "solarPowerStation": -0.1
         },
         "demand": 160,
         "powerStations": []
@@ -362,11 +362,11 @@
     {
         "name": "Portugal",
         "effectiveness": {
-            "AtomicPowerStation": -0.05,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.25,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.2
+            "atomicPowerStation": -0.05,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.25,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.2
         },
         "demand": 40,
         "powerStations": []
@@ -374,11 +374,11 @@
     {
         "name": "Romania",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.15,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.1,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.15,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.1,
+            "solarPowerStation": -0.1
         },
         "demand": 50,
         "powerStations": []
@@ -386,11 +386,11 @@
     {
         "name": "Russia",
         "effectiveness": {
-            "AtomicPowerStation": 0.3,
-            "WindPowerStation": 0.0,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.2,
-            "SolarPowerStation": -0.2
+            "atomicPowerStation": 0.3,
+            "windPowerStation": 0.0,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.2,
+            "solarPowerStation": -0.2
         },
         "demand": 1100,
         "powerStations": []
@@ -398,11 +398,11 @@
     {
         "name": "Serbia",
         "effectiveness": {
-            "AtomicPowerStation": 0.0,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.4,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.0,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.4,
+            "solarPowerStation": -0.1
         },
         "demand": 35,
         "powerStations": []
@@ -410,11 +410,11 @@
     {
         "name": "Slovakia",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.1,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.1
         },
         "demand": 25,
         "powerStations": []
@@ -422,11 +422,11 @@
     {
         "name": "Slovenia",
         "effectiveness": {
-            "AtomicPowerStation": -0.05,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.25,
-            "CoalPowerStation": 0.15,
-            "SolarPowerStation": 0.05
+            "atomicPowerStation": -0.05,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.25,
+            "coalPowerStation": 0.15,
+            "solarPowerStation": 0.05
         },
         "demand": 10,
         "powerStations": []
@@ -434,11 +434,11 @@
     {
         "name": "Spain",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.25,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.05,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.25,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.05,
+            "solarPowerStation": 0.1
         },
         "demand": 210,
         "powerStations": []
@@ -446,11 +446,11 @@
     {
         "name": "Sweden",
         "effectiveness": {
-            "AtomicPowerStation": -0.1,
-            "WindPowerStation": 0.3,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": -0.1,
+            "windPowerStation": 0.3,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.1
         },
         "demand": 140,
         "powerStations": []
@@ -458,11 +458,11 @@
     {
         "name": "Switzerland",
         "effectiveness": {
-            "AtomicPowerStation": 0.05,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.2,
-            "CoalPowerStation": -0.1,
-            "SolarPowerStation": 0.1
+            "atomicPowerStation": 0.05,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.2,
+            "coalPowerStation": -0.1,
+            "solarPowerStation": 0.1
         },
         "demand": 40,
         "powerStations": []
@@ -470,11 +470,11 @@
     {
         "name": "Turkey",
         "effectiveness": {
-            "AtomicPowerStation": 0.1,
-            "WindPowerStation": 0.1,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.1,
+            "windPowerStation": 0.1,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.1
         },
         "demand": 250,
         "powerStations": []
@@ -482,11 +482,11 @@
     {
         "name": "Ukraine",
         "effectiveness": {
-            "AtomicPowerStation": 0.2,
-            "WindPowerStation": 0.05,
-            "WaterPowerStation": 0.3,
-            "CoalPowerStation": 0.15,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.2,
+            "windPowerStation": 0.05,
+            "waterPowerStation": 0.3,
+            "coalPowerStation": 0.15,
+            "solarPowerStation": -0.1
         },
         "demand": 90,
         "powerStations": []
@@ -494,11 +494,11 @@
     {
         "name": "United Kingdom",
         "effectiveness": {
-            "AtomicPowerStation": 0.15,
-            "WindPowerStation": 0.2,
-            "WaterPowerStation": 0.1,
-            "CoalPowerStation": 0.3,
-            "SolarPowerStation": -0.1
+            "atomicPowerStation": 0.15,
+            "windPowerStation": 0.2,
+            "waterPowerStation": 0.1,
+            "coalPowerStation": 0.3,
+            "solarPowerStation": -0.1
         },
         "demand": 380,
         "powerStations": []

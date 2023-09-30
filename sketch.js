@@ -91,7 +91,7 @@ function loadCountries(data) {
             countryData.name,
             countryData.demand,
             new Effectiveness(
-                countryData.effectiveness.atomPowerStation,
+                countryData.effectiveness.atomicPowerStation,
                 countryData.effectiveness.windPowerStation,
                 countryData.effectiveness.waterPowerStation,
                 countryData.effectiveness.coalPowerStation,

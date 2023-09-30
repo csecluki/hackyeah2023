@@ -54,8 +54,8 @@ class Country {
 }
 
 class Effectiveness {
-    constructor(atomPowerStation, windPowerStation, waterPowerStation, coalPowerStation, solarPowerStation) {
-        this.atomPowerStation = atomPowerStation
+    constructor(atomicPowerStation, windPowerStation, waterPowerStation, coalPowerStation, solarPowerStation) {
+        this.atomicPowerStation = atomicPowerStation
         this.windPowerStation = windPowerStation
         this.waterPowerStation = waterPowerStation
         this.coalPowerStation = coalPowerStation
