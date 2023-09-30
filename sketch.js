@@ -6,7 +6,7 @@ var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_
 var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost;
 let countries = [];
 let europe;
-let selectedCountry
+let selectedCountry;
 
 function preload() {
     const buildCost = loadJSON("./models/data/buildCost.json")
@@ -100,6 +100,31 @@ function setup() {
     divControlPanelRight.child(divCuntryOperations);
     divCuntryOperations.child(createDiv('Country Operations').class('controlHeader'));
 
+    let inputAtomicPowerStation = createInput(0, 'number').class('controlValue');
+    inputAtomicPowerStation.input(updateAtomicPowerStation);
+    divCuntryOperations.child(createDiv('Atomic Power Station:').class('controlLabel'));
+    divCuntryOperations.child(inputAtomicPowerStation);
+
+    let inputWindPowerStation = createInput(0, 'number').class('controlValue');
+    inputWindPowerStation.input(updateWindPowerStation);
+    divCuntryOperations.child(createDiv('Wind Power Station:').class('controlLabel'));
+    divCuntryOperations.child(inputWindPowerStation);
+
+    let inputWaterPowerStation = createInput(0, 'number').class('controlValue');
+    inputWaterPowerStation.input(updateWaterPowerStation);
+    divCuntryOperations.child(createDiv('Water Power Station:').class('controlLabel'));
+    divCuntryOperations.child(inputWaterPowerStation);
+
+    let inputCoalPowerStation = createInput(0, 'number').class('controlValue');
+    inputCoalPowerStation.input(updateCoalPowerStation);
+    divCuntryOperations.child(createDiv('Coal Power Station:').class('controlLabel'));
+    divCuntryOperations.child(inputCoalPowerStation);
+
+    let inputSolarPowerStation = createInput(0, 'number').class('controlValue');
+    inputSolarPowerStation.input(updateSolarPowerStation);
+    divCuntryOperations.child(createDiv('Solar Power Station:').class('controlLabel'));
+    divCuntryOperations.child(inputSolarPowerStation);
+
     // ======================================================
 
     const canvasWidth = 600;
@@ -124,8 +149,29 @@ function draw() {
 
 }
 
+function updateAtomicPowerStation() {
+    console.log('you are typing: ', this.value());
+}
+
+function updateWindPowerStation() {
+    console.log('you are typing: ', this.value());
+}
+
+function updateWaterPowerStation() {
+    console.log('you are typing: ', this.value());
+}
+
+function updateCoalPowerStation() {
+    console.log('you are typing: ', this.value());
+}
+
+function updateSolarPowerStation() {
+    console.log('you are typing: ', this.value());
+}
+
+
+
 function countryOnClick(pathOfCountry) {
-    divCountryStats_countryName.html(pathOfCountry.id());
     for (let i = 0; i < path.length; i++) {
         if (path[i].id() !== "") {
             path[i].attribute('opacity', 1);
@@ -133,6 +179,9 @@ function countryOnClick(pathOfCountry) {
     }
     pathOfCountry.attribute('opacity', 0.5);
     selectedCountry = europe.countries.filter(country => country.name === pathOfCountry.id())[0]
+
+
+
 }
 
 function loadCountries(data) {

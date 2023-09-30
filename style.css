@@ -40,8 +40,6 @@ html, body {
 
 .controlHeader {
     background-color: navy;
-    /*float: left;*/
-    /*width: 100%;*/
     color: #ffffff;
     font-weight: bold;
     font-size: 1.2em;
@@ -53,13 +51,11 @@ html, body {
 .controlLabel {
     margin-left: 10px;
     margin-right: 10px;
-    /*float: left;*/
-    /*width: 40%;*/
 }
 
 .controlValue {
     margin-left: 10px;
     margin-right: 10px;
-    /*float: left;*/
+    margin-bottom: 6px;
     font-weight: bold;
 }
