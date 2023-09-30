@@ -9,6 +9,8 @@ let countries = [];
 let europe;
 let selectedCountry;
 
+let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
+
 function preload() {
     const buildCost = loadJSON("./models/data/buildCost.json")
     const quality = loadJSON("./models/data/quality.json")
@@ -104,30 +106,31 @@ function setup() {
     divControlPanelRight.child(divCuntryOperations);
     divCuntryOperations.child(createDiv('Country Operations').class('controlHeader'));
 
-    let inputAtomicPowerStation = createInput(0, 'number').class('controlValue');
-    // inputAtomicPowerStation.input(updateAtomicPowerStation);
+
+    inputAtomicPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
     divCuntryOperations.child(createDiv('Atomic Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputAtomicPowerStation);
+    divCuntryOperations.child(createDiv('<button onclick="decreaseAtomicPowerStation()">-</button>&nbsp;<button onclick="increaseAtomicPowerStation()">+</button>').class('controlLabel'));
 
-    let inputWindPowerStation = createInput(0, 'number').class('controlValue');
-    // inputWindPowerStation.input(updateWindPowerStation);
+    inputWindPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
     divCuntryOperations.child(createDiv('Wind Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputWindPowerStation);
+    divCuntryOperations.child(createDiv('<button onclick="decreaseWindPowerStation()">-</button>&nbsp;<button onclick="increaseWindPowerStation()">+</button>').class('controlLabel'));
 
-    let inputWaterPowerStation = createInput(0, 'number').class('controlValue');
-    // inputWaterPowerStation.input(updateWaterPowerStation);
+    inputWaterPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
     divCuntryOperations.child(createDiv('Water Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputWaterPowerStation);
+    divCuntryOperations.child(createDiv('<button onclick="decreaseWaterPowerStation()">-</button>&nbsp;<button onclick="increaseWaterPowerStation()">+</button>').class('controlLabel'));
 
-    let inputCoalPowerStation = createInput(0, 'number').class('controlValue');
-    // inputCoalPowerStation.input(updateCoalPowerStation);
+    inputCoalPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
     divCuntryOperations.child(createDiv('Coal Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputCoalPowerStation);
+    divCuntryOperations.child(createDiv('<button onclick="decreaseCoalPowerStation()">-</button>&nbsp;<button onclick="increaseCoalPowerStation()">+</button>').class('controlLabel'));
 
-    let inputSolarPowerStation = createInput(0, 'number').class('controlValue');
-    // inputSolarPowerStation.input(updateSolarPowerStation);
+    inputSolarPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
     divCuntryOperations.child(createDiv('Solar Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputSolarPowerStation);
+    divCuntryOperations.child(createDiv('<button onclick="decreaseSolarPowerStation()">-</button>&nbsp;<button onclick="increaseSolarPowerStation()">+</button>').class('controlLabel'));
 
     // ======================================================
 
