@@ -19,8 +19,8 @@ class AtomicPowerStation extends PowerStation {
     static basePowerProduction = 8
     static pollution = 8
     
-    constructor(powerProductionModifier, pollution) {
-        super(AtomicPowerStation.basePowerProduction, powerProductionModifier, pollution)
+    constructor(powerProductionModifier) {
+        super(AtomicPowerStation.basePowerProduction, powerProductionModifier, AtomicPowerStation.pollution)
     }
 
 }
@@ -30,8 +30,8 @@ class WindPowerStation extends PowerStation {
     static basePowerProduction = 0.45
     static pollution = 2.5
     
-    constructor(powerProductionModifier, pollution) {
-        super(WindPowerStation.basePowerProduction, powerProductionModifier, pollution)
+    constructor(powerProductionModifier) {
+        super(WindPowerStation.basePowerProduction, powerProductionModifier, WindPowerStation.pollution)
     }
 
 }
@@ -41,8 +41,8 @@ class WaterPowerStation extends PowerStation {
     static basePowerProduction = 0.65
     static pollution = 6
     
-    constructor(powerProductionModifier, pollution) {
-        super(WaterPowerStation.basePowerProduction, powerProductionModifier, pollution)
+    constructor(powerProductionModifier) {
+        super(WaterPowerStation.basePowerProduction, powerProductionModifier, WaterPowerStation.pollution)
     }
 
 }
@@ -52,8 +52,8 @@ class CoalPowerStation extends PowerStation {
     static basePowerProduction = 2.8
     static pollution = 25
     
-    constructor(powerProductionModifier, pollution) {
-        super(CoalPowerStation.basePowerProduction, powerProductionModifier, pollution)
+    constructor(powerProductionModifier) {
+        super(CoalPowerStation.basePowerProduction, powerProductionModifier, CoalPowerStation.pollution)
     }
 
 }
@@ -63,8 +63,8 @@ class SolarPowerStation extends PowerStation {
     static basePowerProduction = 0.0625
     static pollution = 1
     
-    constructor(powerProductionModifier, pollution) {
-        super(SolarPowerStation.basePowerProduction, powerProductionModifier, pollution)
+    constructor(powerProductionModifier) {
+        super(SolarPowerStation.basePowerProduction, powerProductionModifier, SolarPowerStation.pollution)
     }
 
 }
