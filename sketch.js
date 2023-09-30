@@ -4,14 +4,15 @@ var divMainCointainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
 var divCountryStats, divCuntryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
 var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
 var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost;
+let countries = [];
+let europe;
 
 function preload() {
     const buildCost = loadJSON("./models/data/buildCost.json")
     const quality = loadJSON("./models/data/quality.json")
-    const energyDemand = loadJSON("./models/data/energyDemand.json")
     const energyProduction = loadJSON("./models/data/energyProduction.json")
-    const modifiers = loadJSON("./models/data/modifiers.json")
     const pollution = loadJSON("./models/data/quality.json")
+    loadJSON("./models/data/countries.json", loadCountries)
 
     svg = loadSVG('images/mapOfEurope.svg');
     frameRate(20);
@@ -113,6 +114,7 @@ function setup() {
             path[i].attribute('fill', color(random(255), random(255), random(255)));
         }
     }
+    europe = new Europe(countries, 1000)
 }
 
   
@@ -128,4 +130,22 @@ function countryOnClick(pathOfCountry) {
         }
     }
     pathOfCountry.attribute('opacity', 0.5);
+}
+
+function loadCountries(data) {
+    for (const countryData of data) {
+        const country = new Country(
+            countryData.name,
+            countryData.demand,
+            new Effectiveness(
+                countryData.effectiveness.atomicPowerStation,
+                countryData.effectiveness.windPowerStation,
+                countryData.effectiveness.waterPowerStation,
+                countryData.effectiveness.coalPowerStation,
+                countryData.effectiveness.solarPowerStation
+            ),
+            countryData.powerStations
+        );
+        countries.push(country);
+    }
 }
