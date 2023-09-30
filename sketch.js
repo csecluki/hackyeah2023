@@ -4,6 +4,7 @@ var divMainCointainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
 var divCountryStats, divCuntryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
 var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
 var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost, divCountryStats_europeRemainingFunds;
+var divCountry_atomicPowerStations, divCountry_windPowerStations, divCountry_waterPowerStations, divCountry_coalPowerStations, divCountry_solarPowerStations
 let countries = [];
 let europe;
 let selectedCountry;
@@ -153,42 +154,44 @@ function draw() {
 }
 
 function increaseAtomicPowerStation() {
+    selectedCountry.buildPowerStation(AtomicPowerStation, 0.003)
 }
 
 function decreaseAtomicPowerStation() {
+    selectedCountry.removePowerStation(AtomicPowerStation)
 }
 
 function increaseWindPowerStation() {
-
+    selectedCountry.buildPowerStation(WindPowerStation, 0.003)
 }
 
 function decreaseWindPowerStation() {
-
+    selectedCountry.removePowerStation(WindPowerStation)
 }
 
 function increaseWaterPowerStation() {
-
+    selectedCountry.buildPowerStation(WaterPowerStation, 0.003)
 }
 
 function decreaseWaterPowerStation() {
-
+    selectedCountry.removePowerStation(WaterPowerStation)
 
 }
 
 function increaseCoalPowerStation() {
-
+    selectedCountry.buildPowerStation(CoalPowerStation, 0.003)
 }
 
 function decreaseCoalPowerStation() {
-
+    selectedCountry.removePowerStation(CoalPowerStation)
 }
 
 function increaseSolarPowerStation() {
-
+    selectedCountry.buildPowerStation(SolarPowerStation, 0.003)
 }
 
 function decreaseSolarPowerStation() {
-
+    selectedCountry.removePowerStation(SolarPowerStation)
 }
 
 
@@ -201,11 +204,18 @@ function countryOnClick(pathOfCountry) {
     }
     pathOfCountry.attribute('opacity', 0.5);
     selectedCountry = europe.countries.filter(country => country.name === pathOfCountry.id())[0]
+
     divCountryStats_countryName.html(selectedCountry.name);
     divCountryStats_countryDemand.html(selectedCountry.demand);
     divCountryStats_countryProduction.html(selectedCountry.getProduction());
     divCountryStats_countryPollution.html(selectedCountry.getPollution());
     divCountryStats_countryOverallCost.html(selectedCountry.getTotalCost());
+
+    divCountry_atomicPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(AtomicPowerStation))
+    divCountry_windPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(WindPowerStation))
+    divCountry_waterPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(WaterPowerStation))
+    divCountry_coalPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
+    divCountry_solarPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
 }
 
 function loadCountries(data) {
