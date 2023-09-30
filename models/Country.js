@@ -1,7 +1,8 @@
 class Country {
-    constructor(name, demand, powerStations = []) {
+    constructor(name, demand, effectiveness, powerStations = []) {
         this.name = name
         this.demand = demand
+        this.effectiveness = effectiveness
         this.powerStations = powerStations
     }
 
@@ -49,5 +50,15 @@ class Country {
             this.powerStations.splice(lastIndex, 1)
         }
         return this.powerStations
+    }
+}
+
+class Effectiveness {
+    constructor(atomPowerStation, windPowerStation, waterPowerStation, coalPowerStation, solarPowerStation) {
+        this.atomPowerStation = atomPowerStation
+        this.windPowerStation = windPowerStation
+        this.waterPowerStation = waterPowerStation
+        this.coalPowerStation = coalPowerStation
+        this.solarPowerStation = solarPowerStation
     }
 }
