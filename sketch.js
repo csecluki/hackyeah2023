@@ -3,7 +3,7 @@ var svg, path, canvas;
 var divMainCointainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
 var divCountryStats, divCuntryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
 var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
-var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost;
+var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost, divCountryStats_europeRemainingFunds;
 let countries = [];
 let europe;
 let selectedCountry;
@@ -22,7 +22,6 @@ function preload() {
 
 function setup() {
     europe = new Europe(countries, 1000)
-    selectedCountry = europe.countries.filter(country => country.name === "France")[0]
 
     // ======================================================
 
@@ -69,6 +68,10 @@ function setup() {
     divCountryStats_europeOverallCost = createDiv(europe.getTotalCost()).class('controlValue');
     divEuropeStats.child(divCountryStats_europeOverallCost);
 
+    divEuropeStats.child(createDiv('Remaining Funds:').class('controlLabel'));
+    divCountryStats_europeRemainingFunds = createDiv(europe.funds).class('controlValue');
+    divEuropeStats.child(divCountryStats_europeRemainingFunds);
+
 
     // ======================================================
 
@@ -77,23 +80,23 @@ function setup() {
     divCountryStats.child(createDiv('Country Stats').class('controlHeader'));
 
     divCountryStats.child(createDiv('Country Name:').class('controlLabel'));
-    divCountryStats_countryName = createDiv(selectedCountry.name).class('controlValue');
+    divCountryStats_countryName = createDiv('-').class('controlValue');
     divCountryStats.child(divCountryStats_countryName);
 
     divCountryStats.child(createDiv('Energy Demand:').class('controlLabel'));
-    divCountryStats_countryDemand = createDiv(selectedCountry.demand).class('controlValue');
+    divCountryStats_countryDemand = createDiv('-').class('controlValue');
     divCountryStats.child(divCountryStats_countryDemand);
 
     divCountryStats.child(createDiv('Energy Production:').class('controlLabel'));
-    divCountryStats_countryProduction = createDiv(selectedCountry.getProduction()).class('controlValue');
+    divCountryStats_countryProduction = createDiv('-').class('controlValue');
     divCountryStats.child(divCountryStats_countryProduction);
 
     divCountryStats.child(createDiv('Pollution:').class('controlLabel'));
-    divCountryStats_countryPollution = createDiv(selectedCountry.getPollution()).class('controlValue');
+    divCountryStats_countryPollution = createDiv('-').class('controlValue');
     divCountryStats.child(divCountryStats_countryPollution);
 
     divCountryStats.child(createDiv('Overall Cost:').class('controlLabel'));
-    divCountryStats_countryOverallCost = createDiv(selectedCountry.getTotalCost()).class('controlValue');
+    divCountryStats_countryOverallCost = createDiv('-').class('controlValue');
     divCountryStats.child(divCountryStats_countryOverallCost);
 
     divCuntryOperations = createDiv().class('controlContainer');
@@ -179,9 +182,11 @@ function countryOnClick(pathOfCountry) {
     }
     pathOfCountry.attribute('opacity', 0.5);
     selectedCountry = europe.countries.filter(country => country.name === pathOfCountry.id())[0]
-
-
-
+    divCountryStats_countryName.html(selectedCountry.name);
+    divCountryStats_countryDemand.html(selectedCountry.demand);
+    divCountryStats_countryProduction.html(selectedCountry.getProduction());
+    divCountryStats_countryPollution.html(selectedCountry.getPollution());
+    divCountryStats_countryOverallCost.html(selectedCountry.getTotalCost());
 }
 
 function loadCountries(data) {
