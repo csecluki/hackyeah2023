@@ -104,27 +104,27 @@ function setup() {
     divCuntryOperations.child(createDiv('Country Operations').class('controlHeader'));
 
     let inputAtomicPowerStation = createInput(0, 'number').class('controlValue');
-    inputAtomicPowerStation.input(updateAtomicPowerStation);
+    // inputAtomicPowerStation.input(updateAtomicPowerStation);
     divCuntryOperations.child(createDiv('Atomic Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputAtomicPowerStation);
 
     let inputWindPowerStation = createInput(0, 'number').class('controlValue');
-    inputWindPowerStation.input(updateWindPowerStation);
+    // inputWindPowerStation.input(updateWindPowerStation);
     divCuntryOperations.child(createDiv('Wind Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputWindPowerStation);
 
     let inputWaterPowerStation = createInput(0, 'number').class('controlValue');
-    inputWaterPowerStation.input(updateWaterPowerStation);
+    // inputWaterPowerStation.input(updateWaterPowerStation);
     divCuntryOperations.child(createDiv('Water Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputWaterPowerStation);
 
     let inputCoalPowerStation = createInput(0, 'number').class('controlValue');
-    inputCoalPowerStation.input(updateCoalPowerStation);
+    // inputCoalPowerStation.input(updateCoalPowerStation);
     divCuntryOperations.child(createDiv('Coal Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputCoalPowerStation);
 
     let inputSolarPowerStation = createInput(0, 'number').class('controlValue');
-    inputSolarPowerStation.input(updateSolarPowerStation);
+    // inputSolarPowerStation.input(updateSolarPowerStation);
     divCuntryOperations.child(createDiv('Solar Power Station:').class('controlLabel'));
     divCuntryOperations.child(inputSolarPowerStation);
 
@@ -152,24 +152,43 @@ function draw() {
 
 }
 
-function updateAtomicPowerStation() {
-    console.log('you are typing: ', this.value());
+function increaseAtomicPowerStation() {
 }
 
-function updateWindPowerStation() {
-    console.log('you are typing: ', this.value());
+function decreaseAtomicPowerStation() {
 }
 
-function updateWaterPowerStation() {
-    console.log('you are typing: ', this.value());
+function increaseWindPowerStation() {
+
 }
 
-function updateCoalPowerStation() {
-    console.log('you are typing: ', this.value());
+function decreaseWindPowerStation() {
+
 }
 
-function updateSolarPowerStation() {
-    console.log('you are typing: ', this.value());
+function increaseWaterPowerStation() {
+
+}
+
+function decreaseWaterPowerStation() {
+
+
+}
+
+function increaseCoalPowerStation() {
+
+}
+
+function decreaseCoalPowerStation() {
+
+}
+
+function increaseSolarPowerStation() {
+
+}
+
+function decreaseSolarPowerStation() {
+
 }
 
 
