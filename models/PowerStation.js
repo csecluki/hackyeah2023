@@ -1,7 +1,7 @@
 class PowerStation {
 
-    constructor(builldingCost, powerProduction, pollution) {
-        this.builldingCost = builldingCost
+    constructor(buildingCost, powerProduction, pollution) {
+        this.buildingCost = buildingCost
         this.powerProduction = powerProduction
         this.pollution = pollution
     }
@@ -9,40 +9,40 @@ class PowerStation {
 
 class AtomicPowerStation extends PowerStation {
     
-    constructor(builldingCost, powerProduction, pollution) {
-        super(builldingCost, powerProduction, pollution)
+    constructor(buildingCost, powerProduction, pollution) {
+        super(buildingCost, powerProduction, pollution)
     }
 
 }
 
 class WindPowerStation extends PowerStation {
     
-    constructor(builldingCost, powerProduction, pollution) {
-        super(builldingCost, powerProduction, pollution)
+    constructor(buildingCost, powerProduction, pollution) {
+        super(buildingCost, powerProduction, pollution)
     }
 
 }
 
 class WaterPowerStation extends PowerStation {
     
-    constructor(builldingCost, powerProduction, pollution) {
-        super(builldingCost, powerProduction, pollution)
+    constructor(buildingCost, powerProduction, pollution) {
+        super(buildingCost, powerProduction, pollution)
     }
 
 }
 
 class CoalPowerStation extends PowerStation {
     
-    constructor(builldingCost, powerProduction, pollution) {
-        super(builldingCost, powerProduction, pollution)
+    constructor(buildingCost, powerProduction, pollution) {
+        super(buildingCost, powerProduction, pollution)
     }
 
 }
 
 class SunPowerStation extends PowerStation {
     
-    constructor(builldingCost, powerProduction, pollution) {
-        super(builldingCost, powerProduction, pollution)
+    constructor(buildingCost, powerProduction, pollution) {
+        super(buildingCost, powerProduction, pollution)
     }
 
 }
