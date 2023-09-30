@@ -39,7 +39,7 @@ class CoalPowerStation extends PowerStation {
 
 }
 
-class SunPowerStation extends PowerStation {
+class SolarPowerStation extends PowerStation {
     
     constructor(buildingCost, powerProduction, pollution) {
         super(buildingCost, powerProduction, pollution)
