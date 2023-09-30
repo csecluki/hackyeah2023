@@ -1,0 +1,9 @@
+{
+    "buildCost": {
+        "AtomicPowerStation": 9.0,
+        "WindPowerStation": 1.44,
+        "WaterPowerStation": 1.69,
+        "CoalPowerStation": 6.25,
+        "SolarPowerStation": 2.25
+    }
+}
