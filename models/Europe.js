@@ -15,4 +15,16 @@ class Europe {
             return item.value > max ? item.value : max;
         }, -Infinity)
     }
+
+    getTotalDemand() {
+        return this.countries.reduce((acc, country) => acc + country.demand, 0)
+    }
+
+    getTotalProduction() {
+        return this.countries.reduce((acc, country) => acc + country.getProduction(), 0)
+    }
+
+    getTotalCost() {
+        return this.countries.reduce((acc, country) => acc + country.getTotalCost(), 0)
+    }
 }

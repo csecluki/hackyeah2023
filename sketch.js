@@ -6,6 +6,7 @@ var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_
 var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost;
 let countries = [];
 let europe;
+let selectedCountry
 
 function preload() {
     const buildCost = loadJSON("./models/data/buildCost.json")
@@ -20,6 +21,8 @@ function preload() {
 }
 
 function setup() {
+    europe = new Europe(countries, 1000)
+    selectedCountry = europe.countries.filter(country => country.name === "France")[0]
 
     // ======================================================
 
@@ -51,19 +54,19 @@ function setup() {
     divEuropeStats.child(createDiv('Europe Stats').class('controlHeader'));
 
     divEuropeStats.child(createDiv('Energy Demand:').class('controlLabel'));
-    divCountryStats_europeDemand = createDiv('-').class('controlValue');
+    divCountryStats_europeDemand = createDiv(europe.getTotalDemand()).class('controlValue');
     divEuropeStats.child(divCountryStats_europeDemand);
 
     divEuropeStats.child(createDiv('Energy Production:').class('controlLabel'));
-    divCountryStats_europeProduction = createDiv('-').class('controlValue');
+    divCountryStats_europeProduction = createDiv(europe.getTotalProduction()).class('controlValue');
     divEuropeStats.child(divCountryStats_europeProduction);
 
     divEuropeStats.child(createDiv('Pollution:').class('controlLabel'));
-    divCountryStats_europePollution = createDiv('-').class('controlValue');
+    divCountryStats_europePollution = createDiv(europe.getAveragePollution()).class('controlValue');
     divEuropeStats.child(divCountryStats_europePollution);
 
     divEuropeStats.child(createDiv('Overall Cost:').class('controlLabel'));
-    divCountryStats_europeOverallCost = createDiv('-').class('controlValue');
+    divCountryStats_europeOverallCost = createDiv(europe.getTotalCost()).class('controlValue');
     divEuropeStats.child(divCountryStats_europeOverallCost);
 
 
@@ -74,23 +77,23 @@ function setup() {
     divCountryStats.child(createDiv('Country Stats').class('controlHeader'));
 
     divCountryStats.child(createDiv('Country Name:').class('controlLabel'));
-    divCountryStats_countryName = createDiv('-').class('controlValue');
+    divCountryStats_countryName = createDiv(selectedCountry.name).class('controlValue');
     divCountryStats.child(divCountryStats_countryName);
 
     divCountryStats.child(createDiv('Energy Demand:').class('controlLabel'));
-    divCountryStats_countryDemand = createDiv('-').class('controlValue');
+    divCountryStats_countryDemand = createDiv(selectedCountry.demand).class('controlValue');
     divCountryStats.child(divCountryStats_countryDemand);
 
     divCountryStats.child(createDiv('Energy Production:').class('controlLabel'));
-    divCountryStats_countryProduction = createDiv('-').class('controlValue');
+    divCountryStats_countryProduction = createDiv(selectedCountry.getProduction()).class('controlValue');
     divCountryStats.child(divCountryStats_countryProduction);
 
     divCountryStats.child(createDiv('Pollution:').class('controlLabel'));
-    divCountryStats_countryPollution = createDiv('-').class('controlValue');
+    divCountryStats_countryPollution = createDiv(selectedCountry.getPollution()).class('controlValue');
     divCountryStats.child(divCountryStats_countryPollution);
 
     divCountryStats.child(createDiv('Overall Cost:').class('controlLabel'));
-    divCountryStats_countryOverallCost = createDiv('-').class('controlValue');
+    divCountryStats_countryOverallCost = createDiv(selectedCountry.getTotalCost()).class('controlValue');
     divCountryStats.child(divCountryStats_countryOverallCost);
 
     divCuntryOperations = createDiv().class('controlContainer');
@@ -114,7 +117,6 @@ function setup() {
             path[i].attribute('fill', color(random(255), random(255), random(255)));
         }
     }
-    europe = new Europe(countries, 1000)
 }
 
   
@@ -130,6 +132,7 @@ function countryOnClick(pathOfCountry) {
         }
     }
     pathOfCountry.attribute('opacity', 0.5);
+    selectedCountry = europe.countries.filter(country => country.name === pathOfCountry.id())[0]
 }
 
 function loadCountries(data) {
