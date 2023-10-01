@@ -63,6 +63,7 @@ html, body {
 select {
     margin-bottom: 10px;
     margin-left: 10px;
+    font-size: 16px;
 }
 
 button {
