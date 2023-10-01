@@ -28,6 +28,10 @@ class Country {
         return this.getDemandSatisfaction() > 1
     }
 
+    getSurplus() {
+        return Math.round((this.getProduction() - this.demand) * 100) / 100
+    }
+
     getTotalCost() {
         let cost = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.buildingCost, 0)
         return Math.round(cost * 100) / 100
