@@ -153,6 +153,8 @@ function setup() {
             // path[i].attribute('fill', color(random(255), random(255), random(255)));
         }
     }
+
+    filterChanged()
 }
 
   
@@ -235,7 +237,7 @@ function countryOnClick(pathOfCountry) {
         }
     }
     pathOfCountry.attribute('opacity', 0.5);
-    selectedCountry = europe.countries.filter(country => country.name === pathOfCountry.id())[0]
+    selectedCountry = europe.getCountryById(pathOfCountry.id())
     updateData()
 }
 
@@ -284,42 +286,40 @@ function filterChanged() {
     let item = filterSelector.value();
     switch (item) {
         case 'Pollution':
-            const maxPollution = countries.reduce(
-                (max, country) => { return country.getPollution() > max ? country.getPollution() : max;},
-                countries[0].getPollution());
+            const maxPollution = europe.getMaxPollution() !== 0 ? europe.getMaxPollution() : 1
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
                     path[i].attribute('fill', valueToColor(1 - country.getPollution() / maxPollution));
                 }
             }
             break
         case 'Production':
-            const maxProduction = countries.reduce(
-                (max, country) => { return country.getProduction() > max ? country.getProduction() : max;},
-                countries[0].getProduction());
+            const maxProduction = europe.getMaxProduction() !== 0 ? europe.getMaxProduction() : 1
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
                     path[i].attribute('fill', valueToColor(country.getProduction() / maxProduction));
                 }
             }
             break
         case 'Demand':
-            const maxDemand = countries.reduce(
-                (max, country) => { return country.getDemand() > max ? country.getDemand() : max;},
-                countries[0].getDemand());
+            const maxDemand = europe.getMaxDemand()
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
-                    path[i].attribute('fill', valueToColor(country.getDemand() / maxDemand));
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
+                    path[i].attribute('fill', valueToColor(1 - country.getDemand() / maxDemand));
                 }
             }
             break
         case 'Demand Satisfaction':
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
                     path[i].attribute('fill', valueToColor(Math.min(country.getProduction() / country.getDemand(), 1)));
                 }
             }
