@@ -1,13 +1,16 @@
 class Country {
-    constructor(name, demand, effectiveness, powerStations = []) {
+    constructor(name, demand, effectiveness, powerStations = [], neighbours) {
         this.name = name
         this.demand = demand
         this.effectiveness = effectiveness
         this.powerStations = powerStations
+        this.neighbours = neighbours
+        this.import = 0
+        this.export = 0
     }
 
     getProduction() {
-        let production = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.powerProduction, 0)
+        let production = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.powerProduction, 0) + this.import - this.export
         return Math.round(production * 100) / 100
     }
 
@@ -26,6 +29,10 @@ class Country {
 
     isDemandSatisfied() {
         return this.getDemandSatisfaction() > 1
+    }
+
+    getNeededEnergy() {
+        return this.demand - this.getProduction()
     }
 
     getSurplus() {

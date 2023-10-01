@@ -260,6 +260,9 @@ function countryOnClick(pathOfCountry) {
 
 function updateData() {
 
+    updateSurplus()
+    transferEnergy()
+
     divCountryStats_europeDemand.html(europe.getTotalDemand())
     divCountryStats_europeProduction.html(europe.getTotalProduction())
     divCountryStats_europePollution.html(europe.getAveragePollution())
@@ -284,7 +287,6 @@ function updateData() {
     nextCoalPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(CoalPowerStation).powerProduction)
     nextSolarPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(SolarPowerStation).powerProduction)
 
-    updateSurplus()
     filterChanged()
 }
 
@@ -293,6 +295,23 @@ function updateSurplus() {
     for (let country of europe.countries) {
         if (country.isDemandSatisfied()) {
             energySurplus[country.name] = country.getSurplus()
+        }
+    }
+}
+
+function transferEnergy() {
+    for (const countryName in energySurplus) {
+        const country = countries.find(country => country.name === countryName);
+        if (country.isDemandSatisfied()) {
+            country.neighbours.forEach(neighbourName => {
+                const neighbour = countries.find(country => country.name === neighbourName)
+                if (!neighbour.isDemandSatisfied()) {
+                    const value = min(neighbour.getNeededEnergy(), country.getProduction() - country.demand)
+                    neighbour.import += value * 0.9
+                    country.export += value
+                    energySurplus[countryName] -= value
+                }
+            })
         }
     }
 }
@@ -309,7 +328,8 @@ function loadCountries(data) {
                 countryData.effectiveness.coalPowerStation,
                 countryData.effectiveness.solarPowerStation
             ),
-            countryData.powerStations
+            countryData.powerStations,
+            countryData.neighbours
         );
         countries.push(country);
     }
