@@ -7,7 +7,7 @@ class Europe {
 
     getAveragePollution() {
         let sum = this.countries.reduce((acc, country) => acc + country.getPollution(), 0)
-        return sum / this.countries.length
+        return Math.round(sum / this.countries.length * 100) / 100
     }
 
     getMaxPollution() {
@@ -21,14 +21,20 @@ class Europe {
     }
 
     getTotalProduction() {
-        return this.countries.reduce((acc, country) => acc + country.getProduction(), 0)
+        let production = this.countries.reduce((acc, country) => acc + country.getProduction(), 0)
+        return Math.round(production * 100) / 100
     }
 
     getTotalCost() {
-        return this.countries.reduce((acc, country) => acc + country.getTotalCost(), 0)
+        let cost = this.countries.reduce((acc, country) => acc + country.getTotalCost(), 0)
+        return Math.round(cost * 100) / 100
     }
 
     getRemainingFunds() {
-        return this.funds - this.getTotalCost()
+        return Math.round((this.funds - this.getTotalCost()) * 100) / 100
+    }
+
+    checkBuildingPossibility(stationType) {
+        return this.getRemainingFunds() - stationType.baseBuildingCost > 0
     }
 }

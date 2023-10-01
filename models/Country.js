@@ -7,11 +7,13 @@ class Country {
     }
 
     getProduction() {
-        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.powerProduction, 0)
+        let production = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.powerProduction, 0)
+        return Math.round(production * 100) / 100
     }
 
     getPollution() {
-        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.pollution, 0)
+        let pollution = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.pollution, 0)
+        return Math.round(pollution * 100) / 100
     }
 
     getDemand() {
@@ -27,16 +29,18 @@ class Country {
     }
 
     getTotalCost() {
-        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.buildingCost, 0)
+        let cost = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.buildingCost, 0)
+        return Math.round(cost * 100) / 100
     }
 
     getNumberOfPowerStationsByType(stationType) {
         return this.powerStations.filter(obj => obj instanceof stationType).length
     }
 
-    buildPowerStation(stationType, qualityFactor) {
+    buildPowerStation(stationType) {
         const count = this.getNumberOfPowerStationsByType(stationType)
-        let station = new stationType(count * qualityFactor)
+        let station = new stationType(count, this.effectiveness[stationType.name])
+        console.log(this.effectiveness[stationType.name], station.powerProduction)
         this.powerStations.push(station)
         return this.powerStations
     }
@@ -58,10 +62,10 @@ class Country {
 
 class Effectiveness {
     constructor(atomicPowerStation, windPowerStation, waterPowerStation, coalPowerStation, solarPowerStation) {
-        this.atomicPowerStation = atomicPowerStation
-        this.windPowerStation = windPowerStation
-        this.waterPowerStation = waterPowerStation
-        this.coalPowerStation = coalPowerStation
-        this.solarPowerStation = solarPowerStation
+        this.AtomicPowerStation = atomicPowerStation
+        this.WindPowerStation = windPowerStation
+        this.WaterPowerStation = waterPowerStation
+        this.CoalPowerStation = coalPowerStation
+        this.SolarPowerStation = solarPowerStation
     }
 }

@@ -12,10 +12,6 @@ let filterSelector;
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 
 function preload() {
-    const buildCost = loadJSON("./models/data/buildCost.json")
-    const quality = loadJSON("./models/data/quality.json")
-    const energyProduction = loadJSON("./models/data/energyProduction.json")
-    const pollution = loadJSON("./models/data/quality.json")
     loadJSON("./models/data/countries.json", loadCountries)
 
     svg = loadSVG('images/mapOfEurope.svg');
@@ -165,7 +161,10 @@ function draw() {
 }
 
 function increaseAtomicPowerStation() {
-    selectedCountry.buildPowerStation(AtomicPowerStation, 0.003)
+    if (!europe.checkBuildingPossibility(AtomicPowerStation)) {
+        return
+    }
+    selectedCountry.buildPowerStation(AtomicPowerStation)
     updateData()
 }
 
@@ -175,7 +174,10 @@ function decreaseAtomicPowerStation() {
 }
 
 function increaseWindPowerStation() {
-    selectedCountry.buildPowerStation(WindPowerStation, 0.003)
+    if (!europe.checkBuildingPossibility(WindPowerStation)) {
+        return
+    }
+    selectedCountry.buildPowerStation(WindPowerStation)
     updateData()
 }
 
@@ -185,7 +187,10 @@ function decreaseWindPowerStation() {
 }
 
 function increaseWaterPowerStation() {
-    selectedCountry.buildPowerStation(WaterPowerStation, 0.003)
+    if (!europe.checkBuildingPossibility(WaterPowerStation)) {
+        return
+    }
+    selectedCountry.buildPowerStation(WaterPowerStation)
     updateData()
 }
 
@@ -196,7 +201,10 @@ function decreaseWaterPowerStation() {
 }
 
 function increaseCoalPowerStation() {
-    selectedCountry.buildPowerStation(CoalPowerStation, 0.003)
+    if (!europe.checkBuildingPossibility(CoalPowerStation)) {
+        return
+    }
+    selectedCountry.buildPowerStation(CoalPowerStation)
     updateData()
 }
 
@@ -206,7 +214,10 @@ function decreaseCoalPowerStation() {
 }
 
 function increaseSolarPowerStation() {
-    selectedCountry.buildPowerStation(SolarPowerStation, 0.003)
+    if (!europe.checkBuildingPossibility(SolarPowerStation)) {
+        return
+    }
+    selectedCountry.buildPowerStation(SolarPowerStation)
     updateData()
 }
 

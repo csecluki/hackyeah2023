@@ -3,94 +3,116 @@ class PowerStation {
     static basePowerProduction
     static pollution
 
-    constructor(basePowerProduction, powerProductionModifier, pollution, buildingCost) {
-        this.powerProduction = this.calculatePowerProduction(basePowerProduction, powerProductionModifier)
+    constructor(
+        basePowerProduction,
+        relativeProductionFactor,
+        otherPowerStationNumber,
+        countryEffectiveness,
+        pollution,
+        buildingCost
+    ) {
+        this.powerProduction = this.calculatePowerProduction(
+            basePowerProduction,
+            relativeProductionFactor,
+            otherPowerStationNumber,
+            countryEffectiveness
+        )
         this.pollution = pollution
         this.buildingCost = buildingCost
     }
 
-    calculatePowerProduction(basePowerProduction, powerProductionModifier) {
-        let production = basePowerProduction * (1 - powerProductionModifier);
+    calculatePowerProduction(basePowerProduction, relativeProductionFactor, otherPowerStationNumber, countryEffectiveness) {
+        let production = basePowerProduction * (1 - (relativeProductionFactor * otherPowerStationNumber)) * (1 + countryEffectiveness)
         return Math.round(production * 100) / 100
     }
 }
 
 class AtomicPowerStation extends PowerStation {
-    static baseBuildingCost = 9.0
-    static basePowerProduction = 8
+    static baseBuildingCost = 14.6
+    static basePowerProduction = 51
     static pollution = 8
+    static relativeProductionFactor = 0.003
     
-    constructor(powerProductionModifier) {
+    constructor(otherPowerStationNumber, countryEffectiveness) {
         super(
             AtomicPowerStation.basePowerProduction,
-            powerProductionModifier,
+            AtomicPowerStation.relativeProductionFactor,
+            otherPowerStationNumber,
+            countryEffectiveness,
             AtomicPowerStation.pollution,
             AtomicPowerStation.baseBuildingCost
         )
     }
-
 }
 
 class WindPowerStation extends PowerStation {
     static baseBuildingCost = 1.5
-    static basePowerProduction = 0.45
+    static basePowerProduction = 3.2
     static pollution = 2.5
+    static relativeProductionFactor = 0.02
     
-    constructor(powerProductionModifier) {
+    constructor(otherPowerStationNumber, countryEffectiveness) {
         super(
             WindPowerStation.basePowerProduction,
-            powerProductionModifier,
+            WindPowerStation.relativeProductionFactor,
+            otherPowerStationNumber,
+            countryEffectiveness,
             WindPowerStation.pollution,
             WindPowerStation.baseBuildingCost
         )
     }
-
 }
 
 class WaterPowerStation extends PowerStation {
     static baseBuildingCost = 1.7
-    static basePowerProduction = 0.65
+    static basePowerProduction = 6.4
     static pollution = 6
+    static relativeProductionFactor = 0.05
     
-    constructor(powerProductionModifier) {
+    constructor(otherPowerStationNumber, countryEffectiveness) {
         super(
             WaterPowerStation.basePowerProduction,
-            powerProductionModifier,
+            WaterPowerStation.relativeProductionFactor,
+            otherPowerStationNumber,
+            countryEffectiveness,
             WaterPowerStation.pollution,
             WaterPowerStation.baseBuildingCost
         )
     }
-
 }
 
 class CoalPowerStation extends PowerStation {
     static baseBuildingCost = 6.2
-    static basePowerProduction = 2.8
+    static basePowerProduction = 21.3
     static pollution = 25
+    static relativeProductionFactor = 0.01
     
-    constructor(powerProductionModifier) {
+    constructor(otherPowerStationNumber, countryEffectiveness) {
         super(
             CoalPowerStation.basePowerProduction,
-            powerProductionModifier,
+            CoalPowerStation.relativeProductionFactor,
+            otherPowerStationNumber,
+            countryEffectiveness,
             CoalPowerStation.pollution,
             CoalPowerStation.baseBuildingCost
         )
     }
-
 }
 
 class SolarPowerStation extends PowerStation {
     static baseBuildingCost = 2.3
-    static basePowerProduction = 0.0625
+    static basePowerProduction = 1.3
     static pollution = 1
+    static relativeProductionFactor = 0.015
     
-    constructor(powerProductionModifier) {
+    constructor(otherPowerStationNumber, countryEffectiveness) {
         super(
             SolarPowerStation.basePowerProduction,
-            powerProductionModifier,
+            SolarPowerStation.relativeProductionFactor,
+            otherPowerStationNumber,
+            countryEffectiveness,
             SolarPowerStation.pollution,
             SolarPowerStation.baseBuildingCost
         )
     }
-
 }
