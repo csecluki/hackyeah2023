@@ -4,7 +4,6 @@ var divMainCointainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
 var divCountryStats, divCuntryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
 var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
 var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost, divCountryStats_europeRemainingFunds;
-var divCountry_atomicPowerStations, divCountry_windPowerStations, divCountry_waterPowerStations, divCountry_coalPowerStations, divCountry_solarPowerStations
 let countries = [];
 let europe;
 let selectedCountry;
@@ -214,11 +213,11 @@ function countryOnClick(pathOfCountry) {
     divCountryStats_countryPollution.html(selectedCountry.getPollution());
     divCountryStats_countryOverallCost.html(selectedCountry.getTotalCost());
 
-    divCountry_atomicPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(AtomicPowerStation))
-    divCountry_windPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(WindPowerStation))
-    divCountry_waterPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(WaterPowerStation))
-    divCountry_coalPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
-    divCountry_solarPowerStations.html(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
+    inputAtomicPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(AtomicPowerStation))
+    inputWindPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(WindPowerStation))
+    inputWaterPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(WaterPowerStation))
+    inputCoalPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
+    inputSolarPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
 }
 
 function loadCountries(data) {
