@@ -28,7 +28,7 @@ class Country {
     }
 
     isDemandSatisfied() {
-        return this.getDemandSatisfaction() > 1
+        return this.getDemandSatisfaction() >= 1
     }
 
     getNeededEnergy() {
