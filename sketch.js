@@ -165,7 +165,7 @@ function draw() {
 }
 
 function increaseAtomicPowerStation() {
-    selectedCountry.buildPowerStation(AtomicPowerStation, 0.003)
+    selectedCountry.buildPowerStation(AtomicPowerStation)
     updateData()
 }
 
@@ -175,7 +175,7 @@ function decreaseAtomicPowerStation() {
 }
 
 function increaseWindPowerStation() {
-    selectedCountry.buildPowerStation(WindPowerStation, 0.003)
+    selectedCountry.buildPowerStation(WindPowerStation)
     updateData()
 }
 
@@ -185,7 +185,7 @@ function decreaseWindPowerStation() {
 }
 
 function increaseWaterPowerStation() {
-    selectedCountry.buildPowerStation(WaterPowerStation, 0.003)
+    selectedCountry.buildPowerStation(WaterPowerStation)
     updateData()
 }
 
@@ -196,7 +196,7 @@ function decreaseWaterPowerStation() {
 }
 
 function increaseCoalPowerStation() {
-    selectedCountry.buildPowerStation(CoalPowerStation, 0.003)
+    selectedCountry.buildPowerStation(CoalPowerStation)
     updateData()
 }
 
@@ -206,7 +206,7 @@ function decreaseCoalPowerStation() {
 }
 
 function increaseSolarPowerStation() {
-    selectedCountry.buildPowerStation(SolarPowerStation, 0.003)
+    selectedCountry.buildPowerStation(SolarPowerStation)
     updateData()
 }
 

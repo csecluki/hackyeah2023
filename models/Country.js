@@ -37,9 +37,9 @@ class Country {
         return this.powerStations.filter(obj => obj instanceof stationType).length
     }
 
-    buildPowerStation(stationType, qualityFactor) {
+    buildPowerStation(stationType) {
         const count = this.getNumberOfPowerStationsByType(stationType)
-        let station = new stationType(count * qualityFactor)
+        let station = new stationType(count)
         this.powerStations.push(station)
         return this.powerStations
     }
