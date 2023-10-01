@@ -285,13 +285,10 @@ function transferEnergy() {
         if (country.isDemandSatisfied()) {
             country.neighbours.forEach(neighbourName => {
                 const neighbour = countries.find(country => country.name === neighbourName)
-                console.log(neighbour)
                 if (!neighbour.isDemandSatisfied()) {
                     const value = min(neighbour.getNeededEnergy(), country.getProduction() - country.demand)
                     neighbour.import += value * 0.9
                     country.export += value
-                    console.log(country.name, country.export)
-                    console.log(neighbour.name, neighbour.import)
                     energySurplus[countryName] -= value
                 }
             })
