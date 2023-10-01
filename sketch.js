@@ -47,6 +47,7 @@ function setup() {
     filterSelector.option('Production');
     filterSelector.option('Demand');
     filterSelector.option('Demand Satisfaction');
+    filterSelector.option('Demand Satisfied');
     filterSelector.changed(filterChanged)
     filterSelector.selected('Pollution');
     divMapFilters.child(filterSelector);
@@ -327,6 +328,14 @@ function filterChanged() {
                     let green = Math.round(Math.min(country.getProduction() / country.getDemand(), 1) * 255)
                     let red = 255 - green
                     path[i].attribute('fill', color(red, green, 0));
+                }
+            }
+            break
+        case 'Demand Satisfied':
+            for (let i = 0; i < path.length; i++) {
+                if (path[i].id() !== '') {
+                    let country = countries.filter(c => c.name === path[i].id())[0]
+                    path[i].attribute('fill', country.isDemandSatisfied() ? color(0, 255, 0) : color(255, 0, 0));
                 }
             }
     }

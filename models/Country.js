@@ -40,7 +40,6 @@ class Country {
     buildPowerStation(stationType) {
         const count = this.getNumberOfPowerStationsByType(stationType)
         let station = new stationType(count, this.effectiveness[stationType.name])
-        console.log(this.effectiveness[stationType.name], station.powerProduction)
         this.powerStations.push(station)
         return this.powerStations
     }
