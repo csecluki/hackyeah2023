@@ -27,4 +27,8 @@ class Europe {
     getTotalCost() {
         return this.countries.reduce((acc, country) => acc + country.getTotalCost(), 0)
     }
+
+    getRemainingFunds() {
+        return this.funds - this.getTotalCost()
+    }
 }
