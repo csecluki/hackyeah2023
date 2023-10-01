@@ -247,6 +247,9 @@ function countryOnClick(pathOfCountry) {
 
 function updateData() {
 
+    updateSurplus()
+    transferEnergy()
+
     divCountryStats_europeDemand.html(europe.getTotalDemand())
     divCountryStats_europeProduction.html(europe.getTotalProduction())
     divCountryStats_europePollution.html(europe.getAveragePollution())
@@ -264,8 +267,6 @@ function updateData() {
     inputWaterPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(WaterPowerStation))
     inputCoalPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
     inputSolarPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
-
-    updateSurplus()
     filterChanged()
 }
 
@@ -274,6 +275,26 @@ function updateSurplus() {
     for (let country of europe.countries) {
         if (country.isDemandSatisfied()) {
             energySurplus[country.name] = country.getSurplus()
+        }
+    }
+}
+
+function transferEnergy() {
+    for (const countryName in energySurplus) {
+        const country = countries.find(country => country.name === countryName);
+        if (country.isDemandSatisfied()) {
+            country.neighbours.forEach(neighbourName => {
+                const neighbour = countries.find(country => country.name === neighbourName)
+                console.log(neighbour)
+                if (!neighbour.isDemandSatisfied()) {
+                    const value = min(neighbour.getNeededEnergy(), country.getProduction() - country.demand)
+                    neighbour.import += value * 0.9
+                    country.export += value
+                    console.log(country.name, country.export)
+                    console.log(neighbour.name, neighbour.import)
+                    energySurplus[countryName] -= value
+                }
+            })
         }
     }
 }
@@ -290,7 +311,8 @@ function loadCountries(data) {
                 countryData.effectiveness.coalPowerStation,
                 countryData.effectiveness.solarPowerStation
             ),
-            countryData.powerStations
+            countryData.powerStations,
+            countryData.neighbours
         );
         countries.push(country);
     }
