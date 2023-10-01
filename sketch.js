@@ -69,11 +69,11 @@ function setup() {
     divEuropeStats.child(createDiv('Europe Stats').class('controlHeader'));
 
     divEuropeStats.child(createDiv('Energy Demand:').class('controlLabel'));
-    divCountryStats_europeDemand = createDiv(europe.getTotalDemand()).class('controlValue');
+    divCountryStats_europeDemand = createDiv(europe.getTotalDemand() + ' tWh').class('controlValue');
     divEuropeStats.child(divCountryStats_europeDemand);
 
     divEuropeStats.child(createDiv('Energy Production:').class('controlLabel'));
-    divCountryStats_europeProduction = createDiv(europe.getTotalProduction()).class('controlValue');
+    divCountryStats_europeProduction = createDiv(europe.getTotalProduction() + ' tWh').class('controlValue');
     divEuropeStats.child(divCountryStats_europeProduction);
 
     divEuropeStats.child(createDiv('Pollution:').class('controlLabel'));
@@ -81,11 +81,11 @@ function setup() {
     divEuropeStats.child(divCountryStats_europePollution);
 
     divEuropeStats.child(createDiv('Overall Cost:').class('controlLabel'));
-    divCountryStats_europeOverallCost = createDiv(europe.getTotalCost()).class('controlValue');
+    divCountryStats_europeOverallCost = createDiv(europe.getTotalCost() + ' mln €').class('controlValue');
     divEuropeStats.child(divCountryStats_europeOverallCost);
 
     divEuropeStats.child(createDiv('Remaining Funds:').class('controlLabel'));
-    divCountryStats_europeRemainingFunds = createDiv(europe.funds).class('controlValue');
+    divCountryStats_europeRemainingFunds = createDiv(europe.funds + ' mln €').class('controlValue');
     divEuropeStats.child(divCountryStats_europeRemainingFunds);
 
 
@@ -263,17 +263,17 @@ function updateData() {
     updateSurplus()
     transferEnergy()
 
-    divCountryStats_europeDemand.html(europe.getTotalDemand())
-    divCountryStats_europeProduction.html(europe.getTotalProduction())
+    divCountryStats_europeDemand.html(europe.getTotalDemand() + ' tWh')
+    divCountryStats_europeProduction.html(europe.getTotalProduction() + ' tWh')
     divCountryStats_europePollution.html(europe.getAveragePollution())
-    divCountryStats_europeOverallCost.html(europe.getTotalCost())
-    divCountryStats_europeRemainingFunds.html(europe.getRemainingFunds())
+    divCountryStats_europeOverallCost.html(europe.getTotalCost() + ' mln €')
+    divCountryStats_europeRemainingFunds.html(europe.getRemainingFunds() + ' mln €')
 
-    divCountryStats_countryName.html(selectedCountry.name);
-    divCountryStats_countryDemand.html(selectedCountry.demand);
-    divCountryStats_countryProduction.html(selectedCountry.getProduction());
-    divCountryStats_countryPollution.html(selectedCountry.getPollution());
-    divCountryStats_countryOverallCost.html(selectedCountry.getTotalCost());
+    divCountryStats_countryName.html(selectedCountry.name)
+    divCountryStats_countryDemand.html(selectedCountry.demand + ' tWh')
+    divCountryStats_countryProduction.html(selectedCountry.getProduction() + ' tWh')
+    divCountryStats_countryPollution.html(selectedCountry.getPollution())
+    divCountryStats_countryOverallCost.html(selectedCountry.getTotalCost() + ' mln €')
 
     inputAtomicPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(AtomicPowerStation))
     inputWindPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(WindPowerStation))
