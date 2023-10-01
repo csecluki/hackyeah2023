@@ -21,7 +21,8 @@ class Europe {
     }
 
     getTotalProduction() {
-        return this.countries.reduce((acc, country) => acc + country.getProduction(), 0)
+        let production = this.countries.reduce((acc, country) => acc + country.getProduction(), 0)
+        return Math.round(production * 100) / 100
     }
 
     getTotalCost() {

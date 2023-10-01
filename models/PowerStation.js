@@ -17,7 +17,7 @@ class PowerStation {
 
 class AtomicPowerStation extends PowerStation {
     static baseBuildingCost = 9.0
-    static basePowerProduction = 8
+    static basePowerProduction = 48
     static pollution = 8
     
     constructor(powerProductionModifier) {
@@ -33,7 +33,7 @@ class AtomicPowerStation extends PowerStation {
 
 class WindPowerStation extends PowerStation {
     static baseBuildingCost = 1.5
-    static basePowerProduction = 0.45
+    static basePowerProduction = 2.7
     static pollution = 2.5
     
     constructor(powerProductionModifier) {
@@ -49,7 +49,7 @@ class WindPowerStation extends PowerStation {
 
 class WaterPowerStation extends PowerStation {
     static baseBuildingCost = 1.7
-    static basePowerProduction = 0.65
+    static basePowerProduction = 3.9
     static pollution = 6
     
     constructor(powerProductionModifier) {
@@ -65,7 +65,7 @@ class WaterPowerStation extends PowerStation {
 
 class CoalPowerStation extends PowerStation {
     static baseBuildingCost = 6.2
-    static basePowerProduction = 2.8
+    static basePowerProduction = 16.8
     static pollution = 25
     
     constructor(powerProductionModifier) {
@@ -81,7 +81,7 @@ class CoalPowerStation extends PowerStation {
 
 class SolarPowerStation extends PowerStation {
     static baseBuildingCost = 2.3
-    static basePowerProduction = 0.0625
+    static basePowerProduction = 0.39
     static pollution = 1
     
     constructor(powerProductionModifier) {
