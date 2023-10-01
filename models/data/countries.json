@@ -9,7 +9,13 @@
             "solarPowerStation": 0.1
         },
         "demand": 10,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Greece",
+            "Montenegro",
+            "Kosovo",
+            "North Macedonia"
+        ]
     },
     {
         "name": "Armenia",
@@ -21,7 +27,12 @@
             "solarPowerStation": 0.2
         },
         "demand": 8,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Azerbaijan",
+            "Georgia",
+            "Turkey"
+        ]
     },
     {
         "name": "Austria",
@@ -33,7 +44,16 @@
             "solarPowerStation": 0.25
         },
         "demand": 65,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Czech Republic",
+            "Germany",
+            "Hungary",
+            "Italy",
+            "Slovakia",
+            "Slovenia",
+            "Switzerland"
+        ]
     },
     {
         "name": "Azerbaijan",
@@ -45,7 +65,13 @@
             "solarPowerStation": 0.1
         },
         "demand": 35,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Armenia",
+            "Georgia",
+            "Russia",
+            "Turkey"
+        ]
     },
     {
         "name": "Belarus",
@@ -57,7 +83,14 @@
             "solarPowerStation": -0.2
         },
         "demand": 40,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Latvia",
+            "Lithuania",
+            "Poland",
+            "Russia",
+            "Ukraine"
+        ]
     },
     {
         "name": "Belgium",
@@ -69,7 +102,13 @@
             "solarPowerStation": 0.1
         },
         "demand": 85,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "France",
+            "Germany",
+            "Luxembourg",
+            "Netherlands"
+        ]
     },
     {
         "name": "Bosnia and Herzegovina",
@@ -81,7 +120,12 @@
             "solarPowerStation": -0.1
         },
         "demand": 15,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Croatia",
+            "Montenegro",
+            "Serbia"
+        ]
     },
     {
         "name": "Bulgaria",
@@ -93,7 +137,14 @@
             "solarPowerStation": -0.05
         },
         "demand": 32,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Greece",
+            "North Macedonia",
+            "Romania",
+            "Serbia",
+            "Turkey"
+        ]
     },
     {
         "name": "Croatia",
@@ -105,7 +156,13 @@
             "solarPowerStation": 0.15
         },
         "demand": 18,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Bosnia and Herzegovina",
+            "Montenegro",
+            "Serbia",
+            "Slovenia"
+        ]
     },
     {
         "name": "Cyprus",
@@ -117,7 +174,11 @@
             "solarPowerStation": 0.3
         },
         "demand": 7,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Greece",
+            "Turkey"
+        ]
     },
     {
         "name": "Czech Republic",
@@ -129,7 +190,13 @@
             "solarPowerStation": 0.05
         },
         "demand": 70,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "Germany",
+            "Poland",
+            "Slovakia"
+        ]
     },
     {
         "name": "Denmark",
@@ -141,7 +208,10 @@
             "solarPowerStation": 0.2
         },
         "demand": 30,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Germany"
+        ]
     },
     {
         "name": "Estonia",
@@ -153,7 +223,11 @@
             "solarPowerStation": -0.2
         },
         "demand": 8,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Latvia",
+            "Russia"
+        ]
     },
     {
         "name": "Finland",
@@ -165,7 +239,12 @@
             "solarPowerStation": 0.2
         },
         "demand": 55,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Norway",
+            "Russia",
+            "Sweden"
+        ]
     },
     {
         "name": "France",
@@ -177,7 +256,15 @@
             "solarPowerStation": 0.1
         },
         "demand": 480,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belgium",
+            "Germany",
+            "Italy",
+            "Luxembourg",
+            "Spain",
+            "Switzerland"
+        ]
     },
     {
         "name": "Germany",
@@ -189,7 +276,18 @@
             "solarPowerStation": 0.3
         },
         "demand": 600,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "Belgium",
+            "Czech Republic",
+            "Denmark",
+            "France",
+            "Luxembourg",
+            "Netherlands",
+            "Poland",
+            "Switzerland"
+        ]
     },
     {
         "name": "Greece",
@@ -201,7 +299,14 @@
             "solarPowerStation": 0.1
         },
         "demand": 50,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Albania",
+            "Bulgaria",
+            "North Macedonia",
+            "Turkey",
+            "Cyprus"
+        ]
     },
     {
         "name": "Hungary",
@@ -213,7 +318,16 @@
             "solarPowerStation": -0.05
         },
         "demand": 45,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "Croatia",
+            "Romania",
+            "Serbia",
+            "Slovakia",
+            "Slovenia",
+            "Ukraine"
+        ]
     },
     {
         "name": "Iceland",
@@ -225,7 +339,8 @@
             "solarPowerStation": 0.05
         },
         "demand": 5,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": []
     },
     {
         "name": "Ireland",
@@ -237,7 +352,10 @@
             "solarPowerStation": 0.2
         },
         "demand": 28,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "United Kingdom"
+        ]
     },
     {
         "name": "Italy",
@@ -249,7 +367,13 @@
             "solarPowerStation": 0.3
         },
         "demand": 310,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "France",
+            "Slovenia",
+            "Switzerland"
+        ]
     },
     {
         "name": "Latvia",
@@ -261,7 +385,13 @@
             "solarPowerStation": -0.15
         },
         "demand": 7,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belarus",
+            "Estonia",
+            "Lithuania",
+            "Russia"
+        ]
     },
     {
         "name": "Lithuania",
@@ -273,7 +403,13 @@
             "solarPowerStation": -0.1
         },
         "demand": 12,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belarus",
+            "Latvia",
+            "Poland",
+            "Russia"
+        ]
     },
     {
         "name": "Luxembourg",
@@ -285,7 +421,12 @@
             "solarPowerStation": 0.05
         },
         "demand": 6,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belgium",
+            "France",
+            "Germany"
+        ]
     },
     {
         "name": "North Macedonia",
@@ -297,7 +438,12 @@
             "solarPowerStation": -0.1
         },
         "demand": 9,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Albania",
+            "Bulgaria",
+            "Greece"
+        ]
     },
     {
         "name": "Moldova",
@@ -309,7 +455,11 @@
             "solarPowerStation": -0.05
         },
         "demand": 10,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Romania",
+            "Ukraine"
+        ]
     },
     {
         "name": "Montenegro",
@@ -321,7 +471,12 @@
             "solarPowerStation": -0.1
         },
         "demand": 5,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Bosnia and Herzegovina",
+            "Croatia",
+            "Serbia"
+        ]
     },
     {
         "name": "Netherlands",
@@ -333,7 +488,11 @@
             "solarPowerStation": 0.1
         },
         "demand": 110,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belgium",
+            "Germany"
+        ]
     },
     {
         "name": "Norway",
@@ -345,7 +504,12 @@
             "solarPowerStation": 0.1
         },
         "demand": 50,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Finland",
+            "Sweden",
+            "Russia"
+        ]
     },
     {
         "name": "Poland",
@@ -357,7 +521,15 @@
             "solarPowerStation": -0.1
         },
         "demand": 160,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belarus",
+            "Czech Republic",
+            "Germany",
+            "Lithuania",
+            "Slovakia",
+            "Ukraine"
+        ]
     },
     {
         "name": "Portugal",
@@ -369,7 +541,10 @@
             "solarPowerStation": 0.2
         },
         "demand": 40,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Spain"
+        ]
     },
     {
         "name": "Romania",
@@ -381,7 +556,14 @@
             "solarPowerStation": -0.1
         },
         "demand": 50,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Bulgaria",
+            "Hungary",
+            "Moldova",
+            "Serbia",
+            "Ukraine"
+        ]
     },
     {
         "name": "Russia",
@@ -393,7 +575,19 @@
             "solarPowerStation": -0.2
         },
         "demand": 1100,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Azerbaijan",
+            "Belarus",
+            "Estonia",
+            "Finland",
+            "Georgia",
+            "Latvia",
+            "Lithuania",
+            "Norway",
+            "Poland",
+            "Ukraine"
+        ]
     },
     {
         "name": "Serbia",
@@ -405,7 +599,16 @@
             "solarPowerStation": -0.1
         },
         "demand": 35,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Bosnia and Herzegovina",
+            "Bulgaria",
+            "Croatia",
+            "Hungary",
+            "Montenegro",
+            "North Macedonia",
+            "Romania"
+        ]
     },
     {
         "name": "Slovakia",
@@ -417,7 +620,14 @@
             "solarPowerStation": -0.1
         },
         "demand": 25,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "Czech Republic",
+            "Hungary",
+            "Poland",
+            "Ukraine"
+        ]
     },
     {
         "name": "Slovenia",
@@ -429,7 +639,13 @@
             "solarPowerStation": 0.05
         },
         "demand": 10,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "Croatia",
+            "Hungary",
+            "Italy"
+        ]
     },
     {
         "name": "Spain",
@@ -441,7 +657,12 @@
             "solarPowerStation": 0.1
         },
         "demand": 210,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "France",
+            "Gibraltar",
+            "Portugal"
+        ]
     },
     {
         "name": "Sweden",
@@ -453,7 +674,12 @@
             "solarPowerStation": 0.1
         },
         "demand": 140,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Norway",
+            "Finland",
+            "Denmark"
+        ]
     },
     {
         "name": "Switzerland",
@@ -465,7 +691,13 @@
             "solarPowerStation": 0.1
         },
         "demand": 40,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Austria",
+            "France",
+            "Germany",
+            "Italy"
+        ]
     },
     {
         "name": "Turkey",
@@ -477,7 +709,14 @@
             "solarPowerStation": -0.1
         },
         "demand": 250,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Armenia",
+            "Azerbaijan",
+            "Bulgaria",
+            "Greece",
+            "Cyprus"
+        ]
     },
     {
         "name": "Ukraine",
@@ -489,7 +728,16 @@
             "solarPowerStation": -0.1
         },
         "demand": 90,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Belarus",
+            "Russia",
+            "Romania",
+            "Moldova",
+            "Hungary",
+            "Slovakia",
+            "Poland"
+        ]
     },
     {
         "name": "United Kingdom",
@@ -501,6 +749,10 @@
             "solarPowerStation": -0.1
         },
         "demand": 380,
-        "powerStations": []
+        "powerStations": [],
+        "neighbours": [
+            "Ireland",
+            "France"
+        ]
     }
 ]
