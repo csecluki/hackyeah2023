@@ -13,8 +13,10 @@ let energySurplus = {}
 
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 let nextAtomicPowerStationProduction, nextWindPowerStationProduction, nextWaterPowerStationProduction, nextCoalPowerStationProduction, nextSolarPowerStationProduction;
+let nextAtomicPowerStationCost, nextWindPowerStationCost, nextWaterPowerStationCost, nextCoalPowerStationCost, nextSolarPowerStationCost;
 
-const nextStation = 'Next power station: +'
+const nextStationProduction = 'Next power station: +'
+const nextStationCost = 'Next power station: '
 
 function preload() {
     loadJSON("./models/data/countries.json", loadCountries)
@@ -121,37 +123,47 @@ function setup() {
 
 
     inputAtomicPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    nextAtomicPowerStationProduction = createDiv(nextStation + '0 tWh').class('controlLabel').attribute('disabled', '');
-    divCountryOperations.child(createDiv('Atomic Power Station:').class('controlLabel'));
+    nextAtomicPowerStationProduction = createDiv(nextStationProduction + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextAtomicPowerStationCost = createDiv(nextStationCost + '0 mln €').class('controlLabel').attribute('disabled', '');
+    divCountryOperations.child(createDiv('Nuclear Power Station:').class('controlLabel'));
     divCountryOperations.child(nextAtomicPowerStationProduction);
+    divCountryOperations.child(nextAtomicPowerStationCost);
     divCountryOperations.child(inputAtomicPowerStation);
     divCountryOperations.child(createDiv('<button onclick="decreaseAtomicPowerStation()">-</button>&nbsp;<button onclick="increaseAtomicPowerStation()">+</button>').class('controlLabel'));
 
     inputWindPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    nextWindPowerStationProduction = createDiv(nextStation + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextWindPowerStationProduction = createDiv(nextStationProduction + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextWindPowerStationCost = createDiv(nextStationCost + '0 mln €').class('controlLabel').attribute('disabled', '');
     divCountryOperations.child(createDiv('Wind Power Station:').class('controlLabel'));
     divCountryOperations.child(nextWindPowerStationProduction);
+    divCountryOperations.child(nextWindPowerStationCost);
     divCountryOperations.child(inputWindPowerStation);
     divCountryOperations.child(createDiv('<button onclick="decreaseWindPowerStation()">-</button>&nbsp;<button onclick="increaseWindPowerStation()">+</button>').class('controlLabel'));
 
     inputWaterPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    nextWaterPowerStationProduction = createDiv(nextStation + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextWaterPowerStationProduction = createDiv(nextStationProduction + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextWaterPowerStationCost = createDiv(nextStationCost + '0 mln €').class('controlLabel').attribute('disabled', '');
     divCountryOperations.child(createDiv('Water Power Station:').class('controlLabel'));
     divCountryOperations.child(nextWaterPowerStationProduction);
+    divCountryOperations.child(nextWaterPowerStationCost);
     divCountryOperations.child(inputWaterPowerStation);
     divCountryOperations.child(createDiv('<button onclick="decreaseWaterPowerStation()">-</button>&nbsp;<button onclick="increaseWaterPowerStation()">+</button>').class('controlLabel'));
 
     inputCoalPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    nextCoalPowerStationProduction = createDiv(nextStation + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextCoalPowerStationProduction = createDiv(nextStationProduction + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextCoalPowerStationCost = createDiv(nextStationCost + '0 mln €').class('controlLabel').attribute('disabled', '');
     divCountryOperations.child(createDiv('Coal Power Station:').class('controlLabel'));
     divCountryOperations.child(nextCoalPowerStationProduction);
+    divCountryOperations.child(nextCoalPowerStationCost);
     divCountryOperations.child(inputCoalPowerStation);
     divCountryOperations.child(createDiv('<button onclick="decreaseCoalPowerStation()">-</button>&nbsp;<button onclick="increaseCoalPowerStation()">+</button>').class('controlLabel'));
 
     inputSolarPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    nextSolarPowerStationProduction = createDiv(nextStation + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextSolarPowerStationProduction = createDiv(nextStationProduction + '0 tWh').class('controlLabel').attribute('disabled', '');
+    nextSolarPowerStationCost = createDiv(nextStationCost + '0 mln €').class('controlLabel').attribute('disabled', '');
     divCountryOperations.child(createDiv('Solar Power Station:').class('controlLabel'));
     divCountryOperations.child(nextSolarPowerStationProduction);
+    divCountryOperations.child(nextSolarPowerStationCost);
     divCountryOperations.child(inputSolarPowerStation);
     divCountryOperations.child(createDiv('<button onclick="decreaseSolarPowerStation()">-</button>&nbsp;<button onclick="increaseSolarPowerStation()">+</button>').class('controlLabel'));
 
@@ -281,11 +293,19 @@ function updateData() {
     inputCoalPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
     inputSolarPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
 
-    nextAtomicPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(AtomicPowerStation).powerProduction + ' tWh')
-    nextWindPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(WindPowerStation).powerProduction + ' tWh')
-    nextWaterPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(WaterPowerStation).powerProduction + ' tWh')
-    nextCoalPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(CoalPowerStation).powerProduction + ' tWh')
-    nextSolarPowerStationProduction.html(nextStation + selectedCountry.getNewPowerStation(SolarPowerStation).powerProduction + ' tWh')
+    nextAtomicPowerStationProduction.html(nextStationProduction + selectedCountry.getNewPowerStation(AtomicPowerStation).powerProduction + ' tWh')
+    nextWindPowerStationProduction.html(nextStationProduction + selectedCountry.getNewPowerStation(WindPowerStation).powerProduction + ' tWh')
+    nextWaterPowerStationProduction.html(nextStationProduction + selectedCountry.getNewPowerStation(WaterPowerStation).powerProduction + ' tWh')
+    nextCoalPowerStationProduction.html(nextStationProduction + selectedCountry.getNewPowerStation(CoalPowerStation).powerProduction + ' tWh')
+    nextSolarPowerStationProduction.html(nextStationProduction + selectedCountry.getNewPowerStation(SolarPowerStation).powerProduction + ' tWh')
+
+    console.log(selectedCountry.getNewPowerStation(AtomicPowerStation))
+
+    nextAtomicPowerStationCost.html(nextStationCost + selectedCountry.getNewPowerStation(AtomicPowerStation).buildingCost + ' mln €')
+    nextWindPowerStationCost.html(nextStationCost + selectedCountry.getNewPowerStation(WindPowerStation).buildingCost + ' mln €')
+    nextWaterPowerStationCost.html(nextStationCost + selectedCountry.getNewPowerStation(WaterPowerStation).buildingCost + ' mln €')
+    nextCoalPowerStationCost.html(nextStationCost + selectedCountry.getNewPowerStation(CoalPowerStation).buildingCost + ' mln €')
+    nextSolarPowerStationCost.html(nextStationCost + selectedCountry.getNewPowerStation(SolarPowerStation).buildingCost + ' mln €')
 
     filterChanged()
 }
