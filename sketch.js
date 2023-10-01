@@ -7,6 +7,7 @@ var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountrySt
 let countries = [];
 let europe;
 let selectedCountry;
+let filterSelector;
 
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 
@@ -45,6 +46,14 @@ function setup() {
     divMapFilters = createDiv().class('controlContainer');
     divControlPanelLeft.child(divMapFilters);
     divMapFilters.child(createDiv('Map Filters').class('controlHeader'));
+    filterSelector = createSelect();
+    filterSelector.option('Pollution');
+    filterSelector.option('Production');
+    filterSelector.option('Demand');
+    filterSelector.option('Demand Satisfaction');
+    filterSelector.changed(filterChanged)
+    filterSelector.selected('Pollution');
+    divMapFilters.child(filterSelector);
 
     divMapLegend = createDiv().class('controlContainer');
     divControlPanelLeft.child(divMapLegend);
@@ -145,7 +154,7 @@ function setup() {
         if (path[i].id() !== "") {
             path[i].attribute('onclick', 'countryOnClick( path[' + i + '])');
             // set attribute random color
-            path[i].attribute('fill', color(random(255), random(255), random(255)));
+            // path[i].attribute('fill', color(random(255), random(255), random(255)));
         }
     }
 }
@@ -235,5 +244,59 @@ function loadCountries(data) {
             countryData.powerStations
         );
         countries.push(country);
+    }
+}
+
+function filterChanged() {
+    let item = filterSelector.value();
+    switch (item) {
+        case 'Pollution':
+            const maxPollution = countries.reduce(
+                (max, country) => { return country.getPollution() > max ? country.getPollution() : max;},
+                countries[0].getPollution());
+            for (let i = 0; i < path.length; i++) {
+                if (path[i].id() !== '') {
+                    let country = countries.filter(c => c.name === path[i].id())[0]
+                    let red = Math.round(country.getPollution() * 255 / maxPollution)
+                    let green = 255 - red
+                    path[i].attribute('fill', color(red, green, 0));
+                }
+            }
+            break
+        case 'Production':
+            const maxProduction = countries.reduce(
+                (max, country) => { return country.getProduction() > max ? country.getProduction() : max;},
+                countries[0].getProduction());
+            for (let i = 0; i < path.length; i++) {
+                if (path[i].id() !== '') {
+                    let country = countries.filter(c => c.name === path[i].id())[0]
+                    let green = Math.round(country.getProduction() * 255 / maxProduction)
+                    let red = 255 - green
+                    path[i].attribute('fill', color(red, green, 0));
+                }
+            }
+            break
+        case 'Demand':
+            const maxDemand = countries.reduce(
+                (max, country) => { return country.getDemand() > max ? country.getDemand() : max;},
+                countries[0].getDemand());
+            for (let i = 0; i < path.length; i++) {
+                if (path[i].id() !== '') {
+                    let country = countries.filter(c => c.name === path[i].id())[0]
+                    let green = Math.round(country.getDemand() * 255 / maxDemand)
+                    let red = 255 - green
+                    path[i].attribute('fill', color(red, green, 0));
+                }
+            }
+            break
+        case 'Demand Satisfaction':
+            for (let i = 0; i < path.length; i++) {
+                if (path[i].id() !== '') {
+                    let country = countries.filter(c => c.name === path[i].id())[0]
+                    let green = Math.round(Math.min(country.getProduction() / country.getDemand(), 1) * 255)
+                    let red = 255 - green
+                    path[i].attribute('fill', color(red, green, 0));
+                }
+            }
     }
 }

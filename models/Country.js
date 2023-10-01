@@ -14,6 +14,10 @@ class Country {
         return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.pollution, 0)
     }
 
+    getDemand() {
+        return this.demand
+    }
+
     getDemandSatisfaction() {
         return Math.round(this.getProduction() / this.demand * 100) / 100
     }
