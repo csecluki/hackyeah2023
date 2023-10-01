@@ -12,10 +12,6 @@ let filterSelector;
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 
 function preload() {
-    const buildCost = loadJSON("./models/data/buildCost.json")
-    const quality = loadJSON("./models/data/quality.json")
-    const energyProduction = loadJSON("./models/data/energyProduction.json")
-    const pollution = loadJSON("./models/data/quality.json")
     loadJSON("./models/data/countries.json", loadCountries)
 
     svg = loadSVG('images/mapOfEurope.svg');

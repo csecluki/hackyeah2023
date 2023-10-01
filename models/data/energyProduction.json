@@ -1,9 +1,0 @@
-{
-    "energyProduction": {
-        "AtomicPowerStation": 8,
-        "WindPowerStation": 0.45,
-        "WaterPowerStation": 0.65,
-        "CoalPowerStation": 2.8,
-        "SolarPowerStation": 0.0625
-    }
-}

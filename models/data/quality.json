@@ -1,9 +1,0 @@
-{
-    "quality": {
-        "AtomicPowerStation": 0.003,
-        "WindPowerStation": 0.02,
-        "WaterPowerStation": 0.05,
-        "CoalPowerStation": 0.01,
-        "SolarPowerStation": 0.015
-    }
-}
