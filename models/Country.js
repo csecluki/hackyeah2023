@@ -39,7 +39,8 @@ class Country {
 
     buildPowerStation(stationType) {
         const count = this.getNumberOfPowerStationsByType(stationType)
-        let station = new stationType(count)
+        let station = new stationType(count, this.effectiveness[stationType.name])
+        console.log(this.effectiveness[stationType.name], station.powerProduction)
         this.powerStations.push(station)
         return this.powerStations
     }
@@ -61,10 +62,10 @@ class Country {
 
 class Effectiveness {
     constructor(atomicPowerStation, windPowerStation, waterPowerStation, coalPowerStation, solarPowerStation) {
-        this.atomicPowerStation = atomicPowerStation
-        this.windPowerStation = windPowerStation
-        this.waterPowerStation = waterPowerStation
-        this.coalPowerStation = coalPowerStation
-        this.solarPowerStation = solarPowerStation
+        this.AtomicPowerStation = atomicPowerStation
+        this.WindPowerStation = windPowerStation
+        this.WaterPowerStation = waterPowerStation
+        this.CoalPowerStation = coalPowerStation
+        this.SolarPowerStation = solarPowerStation
     }
 }
