@@ -7,7 +7,7 @@ class Europe {
 
     getAveragePollution() {
         let sum = this.countries.reduce((acc, country) => acc + country.getPollution(), 0)
-        return sum / this.countries.length
+        return Math.round(sum / this.countries.length * 100) / 100
     }
 
     getMaxPollution() {

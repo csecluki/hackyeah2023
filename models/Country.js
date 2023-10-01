@@ -7,11 +7,13 @@ class Country {
     }
 
     getProduction() {
-        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.powerProduction, 0)
+        let production = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.powerProduction, 0)
+        return Math.round(production * 100) / 100
     }
 
     getPollution() {
-        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.pollution, 0)
+        let pollution = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.pollution, 0)
+        return Math.round(pollution * 100) / 100
     }
 
     getDemand() {
@@ -27,7 +29,8 @@ class Country {
     }
 
     getTotalCost() {
-        return this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.buildingCost, 0)
+        let cost = this.powerStations.reduce((accumulator, powerStation) => accumulator + powerStation.buildingCost, 0)
+        return Math.round(cost * 100) / 100
     }
 
     getNumberOfPowerStationsByType(stationType) {
