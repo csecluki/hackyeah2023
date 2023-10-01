@@ -8,6 +8,7 @@ let countries = [];
 let europe;
 let selectedCountry;
 let filterSelector;
+let legendHighestValue, legendLowestValue;
 
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 
@@ -54,6 +55,9 @@ function setup() {
     divMapLegend = createDiv().class('controlContainer');
     divControlPanelLeft.child(divMapLegend);
     divMapLegend.child(createDiv('Map Legend').class('controlHeader'));
+    divMapLegend.child(createDiv('Highest').class('controlLabel'));
+    divMapLegend.child(createDiv().class('gradient'));
+    divMapLegend.child(createDiv('Lowest').class('controlLabel'));
 
     divEuropeStats = createDiv().class('controlContainer');
     divControlPanelLeft.child(divEuropeStats);
