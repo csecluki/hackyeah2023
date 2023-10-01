@@ -9,6 +9,7 @@ let europe;
 let selectedCountry;
 let filterSelector;
 let legendHighestValue, legendLowestValue;
+let energySurplus = {}
 
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 
@@ -264,7 +265,17 @@ function updateData() {
     inputCoalPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
     inputSolarPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
 
+    updateSurplus()
     filterChanged()
+}
+
+function updateSurplus() {
+    energySurplus = {}
+    for (let country of europe.countries) {
+        if (country.isDemandSatisfied()) {
+            energySurplus[country.name] = country.getSurplus()
+        }
+    }
 }
 
 function loadCountries(data) {
