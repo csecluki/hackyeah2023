@@ -42,10 +42,14 @@ class Country {
     }
 
     buildPowerStation(stationType) {
-        const count = this.getNumberOfPowerStationsByType(stationType)
-        let station = new stationType(count, this.effectiveness[stationType.name])
+        let station = this.getNewPowerStation(stationType)
         this.powerStations.push(station)
         return this.powerStations
+    }
+
+    getNewPowerStation(stationType) {
+        const count = this.getNumberOfPowerStationsByType(stationType)
+        return new stationType(count, this.effectiveness[stationType.name])
     }
 
     removePowerStation(stationType) {
