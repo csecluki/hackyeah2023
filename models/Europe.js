@@ -26,10 +26,15 @@ class Europe {
     }
 
     getTotalCost() {
-        return this.countries.reduce((acc, country) => acc + country.getTotalCost(), 0)
+        let cost = this.countries.reduce((acc, country) => acc + country.getTotalCost(), 0)
+        return Math.round(cost * 100) / 100
     }
 
     getRemainingFunds() {
-        return this.funds - this.getTotalCost()
+        return Math.round((this.funds - this.getTotalCost()) * 100) / 100
+    }
+
+    checkBuildingPossibility(stationType) {
+        return this.getRemainingFunds() - stationType.baseBuildingCost > 0
     }
 }

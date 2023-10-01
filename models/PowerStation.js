@@ -28,8 +28,8 @@ class PowerStation {
 }
 
 class AtomicPowerStation extends PowerStation {
-    static baseBuildingCost = 9.0
-    static basePowerProduction = 48
+    static baseBuildingCost = 14.6
+    static basePowerProduction = 51
     static pollution = 8
     static relativeProductionFactor = 0.003
     
@@ -47,7 +47,7 @@ class AtomicPowerStation extends PowerStation {
 
 class WindPowerStation extends PowerStation {
     static baseBuildingCost = 1.5
-    static basePowerProduction = 2.7
+    static basePowerProduction = 3.2
     static pollution = 2.5
     static relativeProductionFactor = 0.02
     
@@ -65,7 +65,7 @@ class WindPowerStation extends PowerStation {
 
 class WaterPowerStation extends PowerStation {
     static baseBuildingCost = 1.7
-    static basePowerProduction = 3.9
+    static basePowerProduction = 6.4
     static pollution = 6
     static relativeProductionFactor = 0.05
     
@@ -83,7 +83,7 @@ class WaterPowerStation extends PowerStation {
 
 class CoalPowerStation extends PowerStation {
     static baseBuildingCost = 6.2
-    static basePowerProduction = 16.8
+    static basePowerProduction = 21.3
     static pollution = 25
     static relativeProductionFactor = 0.01
     
@@ -101,7 +101,7 @@ class CoalPowerStation extends PowerStation {
 
 class SolarPowerStation extends PowerStation {
     static baseBuildingCost = 2.3
-    static basePowerProduction = 0.39
+    static basePowerProduction = 1.3
     static pollution = 1
     static relativeProductionFactor = 0.015
     

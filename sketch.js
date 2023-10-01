@@ -165,6 +165,9 @@ function draw() {
 }
 
 function increaseAtomicPowerStation() {
+    if (!europe.checkBuildingPossibility(AtomicPowerStation)) {
+        return
+    }
     selectedCountry.buildPowerStation(AtomicPowerStation)
     updateData()
 }
@@ -175,6 +178,9 @@ function decreaseAtomicPowerStation() {
 }
 
 function increaseWindPowerStation() {
+    if (!europe.checkBuildingPossibility(WindPowerStation)) {
+        return
+    }
     selectedCountry.buildPowerStation(WindPowerStation)
     updateData()
 }
@@ -185,6 +191,9 @@ function decreaseWindPowerStation() {
 }
 
 function increaseWaterPowerStation() {
+    if (!europe.checkBuildingPossibility(WaterPowerStation)) {
+        return
+    }
     selectedCountry.buildPowerStation(WaterPowerStation)
     updateData()
 }
@@ -196,6 +205,9 @@ function decreaseWaterPowerStation() {
 }
 
 function increaseCoalPowerStation() {
+    if (!europe.checkBuildingPossibility(CoalPowerStation)) {
+        return
+    }
     selectedCountry.buildPowerStation(CoalPowerStation)
     updateData()
 }
@@ -206,6 +218,9 @@ function decreaseCoalPowerStation() {
 }
 
 function increaseSolarPowerStation() {
+    if (!europe.checkBuildingPossibility(SolarPowerStation)) {
+        return
+    }
     selectedCountry.buildPowerStation(SolarPowerStation)
     updateData()
 }
