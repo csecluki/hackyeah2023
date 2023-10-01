@@ -279,9 +279,7 @@ function filterChanged() {
             for (let i = 0; i < path.length; i++) {
                 if (path[i].id() !== '') {
                     let country = countries.filter(c => c.name === path[i].id())[0]
-                    let red = Math.round(country.getPollution() * 255 / maxPollution)
-                    let green = 255 - red
-                    path[i].attribute('fill', color(red, green, 0));
+                    path[i].attribute('fill', valueToColor(1 - country.getPollution() / maxPollution));
                 }
             }
             break
@@ -292,9 +290,7 @@ function filterChanged() {
             for (let i = 0; i < path.length; i++) {
                 if (path[i].id() !== '') {
                     let country = countries.filter(c => c.name === path[i].id())[0]
-                    let green = Math.round(country.getProduction() * 255 / maxProduction)
-                    let red = 255 - green
-                    path[i].attribute('fill', color(red, green, 0));
+                    path[i].attribute('fill', valueToColor(country.getProduction() / maxProduction));
                 }
             }
             break
@@ -305,9 +301,7 @@ function filterChanged() {
             for (let i = 0; i < path.length; i++) {
                 if (path[i].id() !== '') {
                     let country = countries.filter(c => c.name === path[i].id())[0]
-                    let green = Math.round(country.getDemand() * 255 / maxDemand)
-                    let red = 255 - green
-                    path[i].attribute('fill', color(red, green, 0));
+                    path[i].attribute('fill', valueToColor(country.getDemand() / maxDemand));
                 }
             }
             break
@@ -315,10 +309,19 @@ function filterChanged() {
             for (let i = 0; i < path.length; i++) {
                 if (path[i].id() !== '') {
                     let country = countries.filter(c => c.name === path[i].id())[0]
-                    let green = Math.round(Math.min(country.getProduction() / country.getDemand(), 1) * 255)
-                    let red = 255 - green
-                    path[i].attribute('fill', color(red, green, 0));
+                    path[i].attribute('fill', valueToColor(Math.min(country.getProduction() / country.getDemand(), 1)));
                 }
             }
     }
+}
+
+function valueToColor(value) {
+    let r = 255
+    if (value < 0.25) {
+        r += (value - 0.25) * 2 * 255
+    } else if (value > 0.5) {
+        r -= (value - 0.5) * 2 * 255
+    }
+    let g = Math.min(value * 2, 1) * 255
+    return color(r, g, 0);
 }
