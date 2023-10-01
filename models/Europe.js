@@ -12,12 +12,24 @@ class Europe {
 
     getMaxPollution() {
         return this.countries.reduce((max, item) => {
-            return item.value > max ? item.value : max;
+            return item.getPollution() > max ? item.getPollution() : max;
+        }, -Infinity)
+    }
+
+    getMaxProduction() {
+        return this.countries.reduce((max, item) => {
+            return item.getProduction() > max ? item.getProduction() : max;
         }, -Infinity)
     }
 
     getTotalDemand() {
         return this.countries.reduce((acc, country) => acc + country.demand, 0)
+    }
+
+    getMaxDemand() {
+        return this.countries.reduce((max, item) => {
+            return item.getDemand() > max ? item.getDemand() : max;
+        }, -Infinity)
     }
 
     getTotalProduction() {
@@ -36,5 +48,9 @@ class Europe {
 
     checkBuildingPossibility(stationType) {
         return this.getRemainingFunds() - stationType.baseBuildingCost > 0
+    }
+
+    getCountryById(id) {
+        return this.countries.filter(country => country.name === id)[0]
     }
 }

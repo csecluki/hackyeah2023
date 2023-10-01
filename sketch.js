@@ -1,13 +1,14 @@
-var svg, path, canvas;
+let svg, path, canvas;
 
-var divMainCointainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
-var divCountryStats, divCuntryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
-var divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
-var divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost, divCountryStats_europeRemainingFunds;
+let divMainContainer, divControlPanelLeft, divControlPanelRight, divMapPanel;
+let divCountryStats, divCountryOperations, divEuropeStats, divLogo, divMapFilters, divMapLegend;
+let divCountryStats_countryName, divCountryStats_countryDemand, divCountryStats_countryProduction, divCountryStats_countryPollution, divCountryStats_countryOverallCost;
+let divCountryStats_europeDemand, divCountryStats_europeProduction, divCountryStats_europePollution, divCountryStats_europeOverallCost, divCountryStats_europeRemainingFunds;
 let countries = [];
 let europe;
 let selectedCountry;
 let filterSelector;
+let legendHighestValue, legendLowestValue;
 
 let inputAtomicPowerStation, inputWindPowerStation, inputWaterPowerStation, inputCoalPowerStation, inputSolarPowerStation;
 
@@ -24,14 +25,14 @@ function setup() {
 
     // ======================================================
 
-    divMainCointainer = createDiv().class('mainContainer');
+    divMainContainer = createDiv().class('mainContainer');
     divControlPanelLeft = createDiv().class('controlPanel');
     divMapPanel = createDiv().class('mapPanel');
     divControlPanelRight = createDiv().class('controlPanel');
 
-    divMainCointainer.child(divControlPanelLeft);
-    divMainCointainer.child(divMapPanel);
-    divMainCointainer.child(divControlPanelRight);
+    divMainContainer.child(divControlPanelLeft);
+    divMainContainer.child(divMapPanel);
+    divMainContainer.child(divControlPanelRight);
 
     // ======================================================
 
@@ -55,6 +56,9 @@ function setup() {
     divMapLegend = createDiv().class('controlContainer');
     divControlPanelLeft.child(divMapLegend);
     divMapLegend.child(createDiv('Map Legend').class('controlHeader'));
+    divMapLegend.child(createDiv('Highest').class('controlLabel'));
+    divMapLegend.child(createDiv().class('gradient'));
+    divMapLegend.child(createDiv('Lowest').class('controlLabel'));
 
     divEuropeStats = createDiv().class('controlContainer');
     divControlPanelLeft.child(divEuropeStats);
@@ -107,35 +111,35 @@ function setup() {
     divCountryStats_countryOverallCost = createDiv('-').class('controlValue');
     divCountryStats.child(divCountryStats_countryOverallCost);
 
-    divCuntryOperations = createDiv().class('controlContainer');
-    divControlPanelRight.child(divCuntryOperations);
-    divCuntryOperations.child(createDiv('Country Operations').class('controlHeader'));
+    divCountryOperations = createDiv().class('controlContainer');
+    divControlPanelRight.child(divCountryOperations);
+    divCountryOperations.child(createDiv('Country Operations').class('controlHeader'));
 
 
     inputAtomicPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    divCuntryOperations.child(createDiv('Atomic Power Station:').class('controlLabel'));
-    divCuntryOperations.child(inputAtomicPowerStation);
-    divCuntryOperations.child(createDiv('<button onclick="decreaseAtomicPowerStation()">-</button>&nbsp;<button onclick="increaseAtomicPowerStation()">+</button>').class('controlLabel'));
+    divCountryOperations.child(createDiv('Atomic Power Station:').class('controlLabel'));
+    divCountryOperations.child(inputAtomicPowerStation);
+    divCountryOperations.child(createDiv('<button onclick="decreaseAtomicPowerStation()">-</button>&nbsp;<button onclick="increaseAtomicPowerStation()">+</button>').class('controlLabel'));
 
     inputWindPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    divCuntryOperations.child(createDiv('Wind Power Station:').class('controlLabel'));
-    divCuntryOperations.child(inputWindPowerStation);
-    divCuntryOperations.child(createDiv('<button onclick="decreaseWindPowerStation()">-</button>&nbsp;<button onclick="increaseWindPowerStation()">+</button>').class('controlLabel'));
+    divCountryOperations.child(createDiv('Wind Power Station:').class('controlLabel'));
+    divCountryOperations.child(inputWindPowerStation);
+    divCountryOperations.child(createDiv('<button onclick="decreaseWindPowerStation()">-</button>&nbsp;<button onclick="increaseWindPowerStation()">+</button>').class('controlLabel'));
 
     inputWaterPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    divCuntryOperations.child(createDiv('Water Power Station:').class('controlLabel'));
-    divCuntryOperations.child(inputWaterPowerStation);
-    divCuntryOperations.child(createDiv('<button onclick="decreaseWaterPowerStation()">-</button>&nbsp;<button onclick="increaseWaterPowerStation()">+</button>').class('controlLabel'));
+    divCountryOperations.child(createDiv('Water Power Station:').class('controlLabel'));
+    divCountryOperations.child(inputWaterPowerStation);
+    divCountryOperations.child(createDiv('<button onclick="decreaseWaterPowerStation()">-</button>&nbsp;<button onclick="increaseWaterPowerStation()">+</button>').class('controlLabel'));
 
     inputCoalPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    divCuntryOperations.child(createDiv('Coal Power Station:').class('controlLabel'));
-    divCuntryOperations.child(inputCoalPowerStation);
-    divCuntryOperations.child(createDiv('<button onclick="decreaseCoalPowerStation()">-</button>&nbsp;<button onclick="increaseCoalPowerStation()">+</button>').class('controlLabel'));
+    divCountryOperations.child(createDiv('Coal Power Station:').class('controlLabel'));
+    divCountryOperations.child(inputCoalPowerStation);
+    divCountryOperations.child(createDiv('<button onclick="decreaseCoalPowerStation()">-</button>&nbsp;<button onclick="increaseCoalPowerStation()">+</button>').class('controlLabel'));
 
     inputSolarPowerStation = createInput(0, 'number').class('controlValue').attribute('disabled', '');
-    divCuntryOperations.child(createDiv('Solar Power Station:').class('controlLabel'));
-    divCuntryOperations.child(inputSolarPowerStation);
-    divCuntryOperations.child(createDiv('<button onclick="decreaseSolarPowerStation()">-</button>&nbsp;<button onclick="increaseSolarPowerStation()">+</button>').class('controlLabel'));
+    divCountryOperations.child(createDiv('Solar Power Station:').class('controlLabel'));
+    divCountryOperations.child(inputSolarPowerStation);
+    divCountryOperations.child(createDiv('<button onclick="decreaseSolarPowerStation()">-</button>&nbsp;<button onclick="increaseSolarPowerStation()">+</button>').class('controlLabel'));
 
     // ======================================================
 
@@ -154,6 +158,8 @@ function setup() {
             // path[i].attribute('fill', color(random(255), random(255), random(255)));
         }
     }
+
+    filterChanged()
 }
 
   
@@ -227,8 +233,6 @@ function decreaseSolarPowerStation() {
     updateData()
 }
 
-
-
 function countryOnClick(pathOfCountry) {
     for (let i = 0; i < path.length; i++) {
         if (path[i].id() !== "") {
@@ -236,7 +240,7 @@ function countryOnClick(pathOfCountry) {
         }
     }
     pathOfCountry.attribute('opacity', 0.5);
-    selectedCountry = europe.countries.filter(country => country.name === pathOfCountry.id())[0]
+    selectedCountry = europe.getCountryById(pathOfCountry.id())
     updateData()
 }
 
@@ -259,6 +263,8 @@ function updateData() {
     inputWaterPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(WaterPowerStation))
     inputCoalPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(CoalPowerStation))
     inputSolarPowerStation.value(selectedCountry.getNumberOfPowerStationsByType(SolarPowerStation))
+
+    filterChanged()
 }
 
 function loadCountries(data) {
@@ -283,51 +289,41 @@ function filterChanged() {
     let item = filterSelector.value();
     switch (item) {
         case 'Pollution':
-            const maxPollution = countries.reduce(
-                (max, country) => { return country.getPollution() > max ? country.getPollution() : max;},
-                countries[0].getPollution());
+            const maxPollution = europe.getMaxPollution() !== 0 ? europe.getMaxPollution() : 1
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
-                    let red = Math.round(country.getPollution() * 255 / maxPollution)
-                    let green = 255 - red
-                    path[i].attribute('fill', color(red, green, 0));
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
+                    path[i].attribute('fill', valueToColor(1 - country.getPollution() / maxPollution));
                 }
             }
             break
         case 'Production':
-            const maxProduction = countries.reduce(
-                (max, country) => { return country.getProduction() > max ? country.getProduction() : max;},
-                countries[0].getProduction());
+            const maxProduction = europe.getMaxProduction() !== 0 ? europe.getMaxProduction() : 1
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
-                    let green = Math.round(country.getProduction() * 255 / maxProduction)
-                    let red = 255 - green
-                    path[i].attribute('fill', color(red, green, 0));
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
+                    path[i].attribute('fill', valueToColor(country.getProduction() / maxProduction));
                 }
             }
             break
         case 'Demand':
-            const maxDemand = countries.reduce(
-                (max, country) => { return country.getDemand() > max ? country.getDemand() : max;},
-                countries[0].getDemand());
+            const maxDemand = europe.getMaxDemand()
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
-                    let green = Math.round(country.getDemand() * 255 / maxDemand)
-                    let red = 255 - green
-                    path[i].attribute('fill', color(red, green, 0));
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
+                    path[i].attribute('fill', valueToColor(1 - country.getDemand() / maxDemand));
                 }
             }
             break
         case 'Demand Satisfaction':
             for (let i = 0; i < path.length; i++) {
-                if (path[i].id() !== '') {
-                    let country = countries.filter(c => c.name === path[i].id())[0]
-                    let green = Math.round(Math.min(country.getProduction() / country.getDemand(), 1) * 255)
-                    let red = 255 - green
-                    path[i].attribute('fill', color(red, green, 0));
+                let id = path[i].id()
+                if (id !== '') {
+                    let country = europe.getCountryById(id)
+                    path[i].attribute('fill', valueToColor(Math.min(country.getProduction() / country.getDemand(), 1)));
                 }
             }
             break
@@ -339,4 +335,15 @@ function filterChanged() {
                 }
             }
     }
+}
+
+function valueToColor(value) {
+    let r = 255
+    if (value < 0.25) {
+        r += (value - 0.25) * 2 * 255
+    } else if (value > 0.5) {
+        r -= (value - 0.5) * 2 * 255
+    }
+    let g = Math.min(value * 2, 1) * 255
+    return color(r, g, 0);
 }
